@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { site } from "@/content/site";
 
 const navLinks = [
   { href: "/le-docteur-paule", label: "Présentation" },
@@ -29,20 +30,20 @@ export function Header() {
       <div className="bg-encre">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-2">
           <p className="font-inscr text-[10px] uppercase tracking-[0.32em] text-parchemin">
-            Médecin expert · Cour d&apos;appel de Douai
+            {site.bandeauAutorite.gauche}
           </p>
           <p className="font-inscr text-[10px] uppercase tracking-[0.32em] text-or">
-            Arras · 62
+            {site.bandeauAutorite.droite}
           </p>
         </div>
       </div>
 
       <div className="border-b border-hairline-or bg-parchemin/95 backdrop-blur-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-8 px-6 py-3">
-          <Link href="/" className="flex items-center" aria-label="Accueil — Dr Benjamin Paule">
+          <Link href="/" className="flex items-center" aria-label={`Accueil — ${site.identite.nom}`}>
             <Image
               src="/images/logos/logo-color.png"
-              alt="Dr Benjamin Paule"
+              alt={site.identite.nom}
               width={1023}
               height={729}
               priority
@@ -153,7 +154,7 @@ export function Header() {
           </nav>
           <div className="border-t border-hairline-or px-6 py-4">
             <p className="font-inscr text-[9.5px] uppercase tracking-[0.32em] text-brume">
-              Médecin expert · Cour d&apos;appel de Douai
+              {site.bandeauAutorite.gauche}
             </p>
           </div>
         </div>
