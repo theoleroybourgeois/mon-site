@@ -1,0 +1,2917 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cabinet Dr Benjamin Paule — Charte graphique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Marcellus&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --encre: #0F1E33;
+  --encre-soft: #1B2942;
+  --encre-faint: rgba(15,30,51,0.08);
+  --parchemin: #F4ECDD;
+  --parchemin-deep: #EBE0CB;
+  --albatre: #FBF7EE;
+  --albatre-pure: #FDFAF3;
+  --or: #B08D5A;
+  --or-clair: #D4BC95;
+  --or-fonce: #8E6F40;
+  --sceau: #6B1F2A;
+  --sceau-clair: #8E2F3A;
+  --ardoise: #2E2E33;
+  --brume: #A89F8E;
+  --brume-pale: #D8D0BE;
+  --hairline: rgba(15,30,51,0.18);
+  --hairline-or: rgba(176,141,90,0.45);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--parchemin);
+  color: var(--encre);
+  font-family: 'Spectral', Georgia, serif;
+  font-weight: 300;
+  line-height: 1.65;
+  font-size: 16px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Grain papier */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 0.06 0 0 0 0 0.12 0 0 0 0 0.20 0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.18'/></svg>");
+  mix-blend-mode: multiply;
+  opacity: 0.45;
+}
+
+/* TYPOGRAPHIE */
+.serif { font-family: 'Cormorant Garamond', serif; }
+.body-serif { font-family: 'Spectral', Georgia, serif; }
+.inscr { font-family: 'Marcellus', serif; letter-spacing: 0.18em; text-transform: uppercase; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; line-height: 1.1; }
+
+a { color: inherit; text-decoration: none; }
+
+/* MISE EN PAGE GLOBALE */
+.page {
+  position: relative;
+  min-height: 100vh;
+  padding: 100px clamp(40px, 8vw, 140px) 100px clamp(40px, 8vw, 140px);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.page:last-child { border-bottom: none; }
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 70px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.page-meta {
+  font-family: 'Marcellus', serif;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--brume);
+}
+
+.page-meta-roman {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 26px;
+  color: var(--or);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.page-title {
+  font-size: clamp(48px, 7vw, 92px);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
+  font-style: italic;
+}
+
+.page-title em { font-style: normal; }
+
+.page-subtitle {
+  font-family: 'Marcellus', serif;
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--encre);
+  margin-bottom: 60px;
+  display: inline-block;
+  border-bottom: 1px solid var(--or);
+  padding-bottom: 6px;
+}
+
+.lede {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1.45;
+  max-width: 720px;
+  color: var(--encre-soft);
+  margin-bottom: 50px;
+}
+
+.lede::first-letter { color: var(--sceau); font-size: 1.5em; }
+
+p { max-width: 680px; margin-bottom: 18px; }
+
+p + p { margin-top: 0; }
+
+.small { font-size: 14px; color: var(--ardoise); }
+
+.fine-print {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: var(--brume);
+  text-transform: uppercase;
+}
+
+/* HAIRLINES & ORNEMENTS */
+.hairline-gold {
+  height: 1px;
+  background: var(--or);
+  width: 60px;
+  margin: 30px 0;
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 80px 0 50px;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--hairline);
+}
+
+.section-divider .ornament {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--or);
+  font-size: 24px;
+  font-weight: 400;
+}
+
+/* ============================ */
+/* COVER                        */
+/* ============================ */
+.cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px clamp(40px, 8vw, 120px);
+  background: linear-gradient(180deg, var(--parchemin-deep) 0%, var(--parchemin) 35%, var(--parchemin) 100%);
+  position: relative;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.cover-top, .cover-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cover-top {
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 16px;
+}
+
+.cover-top-left, .cover-top-right {
+  font-family: 'Marcellus', serif;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--encre);
+}
+
+.cover-top-right { color: var(--or); }
+
+.cover-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 0;
+  gap: 40px;
+}
+
+.cover-medallion { animation: medalRise 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+@keyframes medalRise {
+  from { opacity: 0; transform: translateY(30px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.cover-wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: fadeUp 1.2s 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cover-name {
+  font-family: 'Marcellus', serif;
+  font-size: clamp(18px, 2vw, 22px);
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+}
+
+.cover-em {
+  width: 32px;
+  height: 1px;
+  background: var(--or);
+}
+
+.cover-tagline {
+  font-family: 'Marcellus', serif;
+  font-size: 11.5px;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--brume);
+}
+
+.cover-doctitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(56px, 9vw, 120px);
+  line-height: 1;
+  margin-top: 30px;
+  color: var(--encre);
+}
+
+.cover-edition {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--or);
+}
+
+.cover-bottom {
+  border-top: 1px solid var(--hairline);
+  padding-top: 16px;
+  font-family: 'Marcellus', serif;
+  font-size: 10.5px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--brume);
+}
+
+/* Ornement floral cover */
+.cover-flourish {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 80px;
+  opacity: 0.4;
+}
+
+/* ============================ */
+/* SOMMAIRE                     */
+/* ============================ */
+.sommaire-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 700px;
+  margin-top: 30px;
+}
+
+.sommaire-item {
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  align-items: baseline;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--hairline);
+  transition: padding-left 0.4s ease;
+  cursor: pointer;
+}
+
+.sommaire-item:hover { padding-left: 12px; background: rgba(176,141,90,0.04); }
+
+.sommaire-item:hover .somm-num { color: var(--sceau); }
+
+.somm-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 28px;
+  color: var(--or);
+  transition: color 0.3s;
+}
+
+.somm-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  letter-spacing: 0.01em;
+  position: relative;
+}
+
+.somm-title::after {
+  content: '·····················································································';
+  color: var(--brume-pale);
+  position: absolute;
+  left: 100%;
+  margin-left: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 60vw;
+  letter-spacing: 0.2em;
+}
+
+.somm-folio {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--ardoise);
+  letter-spacing: 0.1em;
+  z-index: 1;
+  background: var(--parchemin);
+  padding-left: 14px;
+  position: relative;
+}
+
+/* ============================ */
+/* SECTION I — PRÉAMBULE        */
+/* ============================ */
+.preambule-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-top: 40px;
+}
+
+.preambule-block h3 {
+  font-size: 28px;
+  font-style: italic;
+  margin-bottom: 20px;
+  color: var(--encre);
+}
+
+.preambule-block h3 .num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--or);
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 8px;
+  font-style: normal;
+}
+
+.values-list {
+  list-style: none;
+  margin-top: 30px;
+}
+
+.values-list li {
+  padding: 18px 0;
+  border-top: 1px solid var(--hairline);
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 20px;
+  align-items: baseline;
+}
+
+.values-list li:last-child { border-bottom: 1px solid var(--hairline); }
+
+.values-list .v-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--or);
+  font-size: 22px;
+}
+
+.values-list .v-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.values-list .v-desc {
+  font-size: 14.5px;
+  color: var(--ardoise);
+}
+
+.audience-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1px;
+  background: var(--hairline);
+  margin-top: 30px;
+  border: 1px solid var(--hairline);
+}
+
+.audience-card {
+  background: var(--albatre);
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.audience-card .icon {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto 14px;
+  color: var(--or);
+}
+
+.audience-card .label {
+  font-family: 'Marcellus', serif;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.audience-card .desc {
+  font-size: 13px;
+  color: var(--ardoise);
+  font-style: italic;
+}
+
+.pull-quote {
+  margin: 80px 0;
+  padding-left: 30px;
+  border-left: 1px solid var(--or);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.45;
+  max-width: 760px;
+  color: var(--encre-soft);
+}
+
+.pull-quote-attr {
+  display: block;
+  margin-top: 18px;
+  font-family: 'Marcellus', serif;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--brume);
+  font-style: normal;
+}
+
+/* ============================ */
+/* SECTION II — LOGO            */
+/* ============================ */
+.logo-stage {
+  background: var(--albatre);
+  border: 1px solid var(--hairline);
+  padding: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0 60px;
+  position: relative;
+  min-height: 420px;
+}
+
+.logo-stage::before, .logo-stage::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+}
+
+.logo-stage::before { top: 12px; left: 12px; border-top: 1px solid var(--or); border-left: 1px solid var(--or); }
+.logo-stage::after { bottom: 12px; right: 12px; border-bottom: 1px solid var(--or); border-right: 1px solid var(--or); }
+
+.logo-corner-tr, .logo-corner-bl {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+}
+
+.logo-corner-tr { top: 12px; right: 12px; border-top: 1px solid var(--or); border-right: 1px solid var(--or); }
+.logo-corner-bl { bottom: 12px; left: 12px; border-bottom: 1px solid var(--or); border-left: 1px solid var(--or); }
+
+.logo-variants {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+  margin-bottom: 60px;
+}
+
+.logo-variant-cell {
+  background: var(--albatre);
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  min-height: 220px;
+  justify-content: center;
+}
+
+.logo-variant-cell.dark {
+  background: var(--encre);
+  color: var(--parchemin);
+}
+
+.logo-variant-cell.gold {
+  background: var(--or);
+  color: var(--albatre);
+}
+
+.logo-variant-cell.sceau {
+  background: var(--sceau);
+  color: var(--albatre);
+}
+
+.lv-label {
+  font-family: 'Marcellus', serif;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--brume);
+  margin-top: 12px;
+}
+
+.logo-variant-cell.dark .lv-label,
+.logo-variant-cell.gold .lv-label,
+.logo-variant-cell.sceau .lv-label { color: rgba(244,236,221,0.55); }
+
+.logo-rules {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin: 60px 0;
+}
+
+.rule-card {
+  border-top: 1px solid var(--hairline);
+  padding-top: 18px;
+}
+
+.rule-card .num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 32px;
+  color: var(--or);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.rule-card h4 {
+  font-size: 19px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.rule-card p {
+  font-size: 14px;
+  color: var(--ardoise);
+}
+
+.dont-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+  margin-top: 30px;
+}
+
+.dont-cell {
+  background: var(--albatre);
+  padding: 40px 24px;
+  text-align: center;
+  position: relative;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.dont-cell::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent calc(50% - 1px), var(--sceau) calc(50% - 1px), var(--sceau) calc(50% + 1px), transparent calc(50% + 1px));
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.dont-cell .label {
+  font-family: 'Marcellus', serif;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--sceau);
+  position: relative;
+  background: var(--albatre);
+  padding: 4px 10px;
+  z-index: 2;
+}
+
+/* ============================ */
+/* SECTION III — COULEURS       */
+/* ============================ */
+.color-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  height: 240px;
+  margin: 30px 0 60px;
+  border: 1px solid var(--hairline);
+}
+
+.color-hero > div {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.color-hero > div span {
+  font-family: 'Marcellus', serif;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+  margin-bottom: 60px;
+}
+
+.color-card {
+  background: var(--albatre);
+  display: flex;
+  flex-direction: column;
+}
+
+.color-swatch {
+  height: 200px;
+  position: relative;
+  cursor: pointer;
+  transition: filter 0.3s;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+.color-swatch:hover { filter: brightness(0.96); }
+
+.color-swatch .swatch-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 24px;
+}
+
+.color-swatch.light .swatch-name { color: var(--encre); }
+.color-swatch.dark .swatch-name { color: var(--parchemin); }
+
+.color-swatch .swatch-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-family: 'Marcellus', serif;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.color-swatch.light .swatch-tag { color: var(--brume); }
+.color-swatch.dark .swatch-tag { color: rgba(244,236,221,0.55); }
+
+.color-info {
+  padding: 22px 20px;
+  border-top: 1px solid var(--hairline);
+}
+
+.color-info .role {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14.5px;
+  color: var(--ardoise);
+  margin-bottom: 14px;
+  display: block;
+  line-height: 1.4;
+}
+
+.color-codes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--ardoise);
+}
+
+.color-codes .key { color: var(--brume); letter-spacing: 0.05em; }
+
+.color-codes .val { user-select: all; cursor: copy; }
+
+.color-codes .val:hover { color: var(--sceau); }
+
+.proportions {
+  display: flex;
+  height: 50px;
+  margin: 30px 0 16px;
+  border: 1px solid var(--hairline);
+}
+
+.proportions > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Marcellus', serif;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.usage-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+.usage-table th, .usage-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 14px;
+}
+
+.usage-table th {
+  font-family: 'Marcellus', serif;
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brume);
+  font-weight: 400;
+  border-bottom: 1px solid var(--encre);
+}
+
+.usage-table tr:hover td { background: rgba(176,141,90,0.05); }
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+  border: 1px solid var(--hairline);
+}
+
+/* ============================ */
+/* SECTION IV — TYPOGRAPHIE     */
+/* ============================ */
+.type-specimen {
+  background: var(--albatre);
+  border: 1px solid var(--hairline);
+  padding: 60px;
+  margin: 30px 0;
+  position: relative;
+}
+
+.type-specimen .label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 30px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.type-specimen .family {
+  font-family: 'Marcellus', serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.type-specimen .role {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--or);
+}
+
+.specimen-letter {
+  font-size: clamp(120px, 18vw, 220px);
+  line-height: 1;
+  margin: 20px 0;
+  font-weight: 400;
+}
+
+.specimen-pangram {
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.25;
+  margin: 30px 0;
+  font-weight: 300;
+}
+
+.specimen-glyphs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  gap: 6px;
+  margin: 30px 0;
+  font-size: 22px;
+  text-align: center;
+}
+
+.specimen-glyphs span { padding: 8px 0; border: 1px solid var(--hairline); background: var(--parchemin); }
+
+.weights-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.weight-cell {
+  border-top: 1px solid var(--hairline);
+  padding-top: 12px;
+}
+
+.weight-cell .w-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--brume);
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.weight-cell .w-sample { font-size: 22px; line-height: 1.2; }
+
+.scale-row {
+  display: grid;
+  grid-template-columns: 80px 100px 1fr;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--hairline);
+  gap: 20px;
+}
+
+.scale-row .scale-name {
+  font-family: 'Marcellus', serif;
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brume);
+}
+
+.scale-row .scale-spec {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--ardoise);
+}
+
+.scale-row .scale-sample { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+
+/* ============================ */
+/* SECTION V — COMPOSANTS       */
+/* ============================ */
+.comp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1px;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+  margin: 30px 0;
+}
+
+.comp-cell {
+  background: var(--albatre);
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.comp-cell .comp-label {
+  font-family: 'Marcellus', serif;
+  font-size: 10.5px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--brume);
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 10px;
+}
+
+/* Boutons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 30px;
+  font-family: 'Marcellus', serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  background: transparent;
+  color: inherit;
+}
+
+.btn-primary {
+  background: var(--encre);
+  color: var(--parchemin);
+}
+
+.btn-primary:hover {
+  background: var(--sceau);
+  letter-spacing: 0.36em;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--encre);
+  border: 1px solid var(--encre);
+}
+
+.btn-secondary:hover {
+  background: var(--encre);
+  color: var(--parchemin);
+}
+
+.btn-text {
+  padding: 0;
+  color: var(--encre);
+  position: relative;
+}
+
+.btn-text::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--or);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+
+.btn-text:hover::after { transform: scaleX(0.6); }
+
+.btn-gold {
+  background: var(--or);
+  color: var(--albatre);
+}
+
+.btn-gold:hover { background: var(--or-fonce); }
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-family: 'Marcellus', serif;
+  font-size: 9.5px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+}
+
+.badge-gold { color: var(--or); }
+.badge-encre { color: var(--encre); }
+.badge-sceau { color: var(--sceau); }
+.badge-filled { background: var(--encre); color: var(--parchemin); border: 1px solid var(--encre); }
+
+/* Form */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-family: 'Marcellus', serif;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brume);
+}
+
+.form-group input, .form-group textarea, .form-group select {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--hairline);
+  padding: 8px 0;
+  font-family: 'Spectral', serif;
+  font-size: 16px;
+  color: var(--encre);
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+  outline: none;
+  border-bottom-color: var(--or);
+}
+
+.form-group input::placeholder { color: var(--brume); font-style: italic; }
+
+/* Card */
+.elegant-card {
+  background: var(--albatre-pure);
+  border: 1px solid var(--hairline);
+  padding: 32px 28px;
+  position: relative;
+  max-width: 380px;
+}
+
+.elegant-card::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 18px;
+  height: 18px;
+  border-top: 1px solid var(--or);
+  border-left: 1px solid var(--or);
+}
+
+.elegant-card::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 18px;
+  height: 18px;
+  border-bottom: 1px solid var(--or);
+  border-right: 1px solid var(--or);
+}
+
+.elegant-card .card-tag {
+  font-family: 'Marcellus', serif;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--or);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.elegant-card h4 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.elegant-card p {
+  font-size: 14px;
+  color: var(--ardoise);
+  line-height: 1.6;
+}
+
+/* Callout */
+.callout {
+  display: flex;
+  gap: 24px;
+  padding: 24px 28px;
+  background: rgba(176,141,90,0.07);
+  border-left: 1px solid var(--or);
+  align-items: flex-start;
+}
+
+.callout .callout-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  color: var(--or);
+}
+
+.callout .callout-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.callout p { font-size: 14px; color: var(--ardoise); }
+
+/* Tableaux */
+.elegant-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.elegant-table th {
+  font-family: 'Marcellus', serif;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--brume);
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 400;
+  border-bottom: 1px solid var(--encre);
+}
+
+.elegant-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 13.5px;
+}
+
+.elegant-table tr:nth-child(even) td { background: rgba(176,141,90,0.04); }
+
+/* ============================ */
+/* SECTION VI — TEMPLATES       */
+/* ============================ */
+.tpl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.tpl-mock {
+  background: var(--albatre-pure);
+  border: 1px solid var(--hairline);
+  padding: 40px 36px;
+  aspect-ratio: 1 / 1.414; /* A4 */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 2px 30px rgba(15,30,51,0.06);
+  font-size: 11px;
+}
+
+.tpl-label {
+  font-family: 'Marcellus', serif;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--brume);
+  text-align: center;
+  margin-top: 14px;
+}
+
+.tpl-letterhead .lh-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--or);
+  padding-bottom: 18px;
+  margin-bottom: 28px;
+}
+
+.lh-logo-mini {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.lh-meta {
+  text-align: right;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  color: var(--brume);
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.lh-doctitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  text-align: center;
+  margin: 16px 0 4px;
+}
+
+.lh-ref {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8.5px;
+  letter-spacing: 0.12em;
+  text-align: center;
+  color: var(--ardoise);
+  margin-bottom: 22px;
+  text-transform: uppercase;
+}
+
+.lh-body {
+  font-size: 9px;
+  line-height: 1.7;
+  flex: 1;
+  color: var(--ardoise);
+}
+
+.lh-body .ll {
+  height: 1px;
+  background: var(--brume-pale);
+  margin: 4px 0;
+}
+
+.lh-body .ll.short { width: 60%; }
+.lh-body .ll.medium { width: 85%; }
+
+.lh-body h5 {
+  font-family: 'Marcellus', serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 14px 0 10px;
+  color: var(--encre);
+}
+
+.lh-foot {
+  border-top: 1px solid var(--hairline);
+  padding-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brume);
+}
+
+/* Page de garde */
+.tpl-cover {
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  background: linear-gradient(180deg, var(--parchemin-deep) 0%, var(--albatre-pure) 50%, var(--parchemin-deep) 100%);
+}
+
+.tpl-cover .cv-top, .tpl-cover .cv-bottom {
+  font-family: 'Marcellus', serif;
+  font-size: 8.5px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--brume);
+}
+
+.tpl-cover .cv-medal {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 60px;
+  line-height: 1;
+}
+
+.tpl-cover .cv-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  margin: 18px 0 10px;
+}
+
+.tpl-cover .cv-subtitle {
+  font-family: 'Marcellus', serif;
+  font-size: 8.5px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.tpl-cover .cv-classify {
+  border: 1px solid var(--sceau);
+  color: var(--sceau);
+  padding: 5px 12px;
+  font-family: 'Marcellus', serif;
+  font-size: 8px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* Signature */
+.tpl-sig .sig-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.sig-line {
+  height: 1px;
+  background: var(--encre);
+  margin-bottom: 8px;
+}
+
+.sig-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 16px;
+}
+
+.sig-qual {
+  font-family: 'Marcellus', serif;
+  font-size: 8.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ardoise);
+  margin-top: 4px;
+}
+
+.sig-stamp {
+  position: absolute;
+  bottom: 80px;
+  right: 50px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid var(--sceau);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--sceau);
+  font-size: 24px;
+  transform: rotate(-12deg);
+  opacity: 0.6;
+}
+
+.sig-stamp::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--sceau);
+  border-radius: 50%;
+}
+
+/* ============================ */
+/* SECTION VII — ICONOGRAPHIE   */
+/* ============================ */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1px;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+  margin: 40px 0 30px;
+}
+
+.icon-cell {
+  background: var(--albatre);
+  padding: 30px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  transition: background 0.4s;
+}
+
+.icon-cell:hover { background: var(--albatre-pure); }
+
+.icon-cell svg {
+  width: 44px;
+  height: 44px;
+  color: var(--encre);
+  transition: color 0.4s, transform 0.4s;
+}
+
+.icon-cell:hover svg { color: var(--or); transform: scale(1.1); }
+
+.icon-cell .ic-name {
+  font-family: 'Marcellus', serif;
+  font-size: 9.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ardoise);
+  text-align: center;
+}
+
+.icon-rules {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.icon-rule h5 {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.icon-rule p { font-size: 13.5px; color: var(--ardoise); }
+
+.icon-rule .num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--or);
+  letter-spacing: 0.18em;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Construction grid */
+.construct-stage {
+  background: var(--albatre);
+  border: 1px solid var(--hairline);
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.construct-stage::before {
+  content: '';
+  position: absolute;
+  inset: 50px;
+  background-image:
+    linear-gradient(0deg, var(--hairline-or) 1px, transparent 1px),
+    linear-gradient(90deg, var(--hairline-or) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* ============================ */
+/* COLOPHON                     */
+/* ============================ */
+.colophon {
+  background: var(--encre);
+  color: var(--parchemin);
+  padding: 100px clamp(40px, 8vw, 140px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.colo-left .colo-monogram {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 80px;
+  color: var(--or);
+  line-height: 1;
+  margin-bottom: 30px;
+}
+
+.colo-left h3 {
+  font-size: 38px;
+  font-style: italic;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
+.colo-left p {
+  color: var(--brume-pale);
+  font-size: 15px;
+  max-width: 460px;
+}
+
+.colo-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 13px;
+}
+
+.colo-block {
+  border-top: 1px solid rgba(244,236,221,0.18);
+  padding-top: 18px;
+}
+
+.colo-block .colo-label {
+  font-family: 'Marcellus', serif;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 10px;
+}
+
+.colo-block .colo-content {
+  color: var(--parchemin);
+  line-height: 1.7;
+}
+
+.colo-foot {
+  grid-column: 1 / -1;
+  border-top: 1px solid rgba(244,236,221,0.18);
+  padding-top: 24px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  color: var(--brume-pale);
+  text-transform: uppercase;
+}
+
+/* SIDE NAV */
+.sidenav {
+  position: fixed;
+  top: 50%;
+  right: 28px;
+  transform: translateY(-50%);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px 14px;
+  border-left: 1px solid var(--hairline);
+}
+
+.sidenav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--brume);
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.sidenav a::before {
+  content: '';
+  width: 8px;
+  height: 1px;
+  background: var(--brume);
+  transition: width 0.3s, background 0.3s;
+}
+
+.sidenav a:hover, .sidenav a.active { color: var(--encre); }
+
+.sidenav a.active::before { width: 20px; background: var(--or); }
+
+.sidenav a:hover::before { width: 16px; background: var(--or); }
+
+@media (max-width: 1100px) { .sidenav { display: none; } }
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+  .preambule-grid, .colophon { grid-template-columns: 1fr; gap: 40px; }
+  .logo-rules { grid-template-columns: 1fr; }
+  .color-hero { grid-template-columns: repeat(5, 1fr); height: 140px; }
+  .somm-title::after { display: none; }
+  .sommaire-item { grid-template-columns: 50px 1fr 60px; }
+  .page { padding: 60px 24px; }
+  .logo-stage { padding: 40px 20px; min-height: 280px; }
+}
+
+/* TOAST */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--encre);
+  color: var(--parchemin);
+  padding: 14px 26px;
+  font-family: 'Marcellus', serif;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  z-index: 200;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  border: 1px solid var(--or);
+}
+
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* Reveal on scroll */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 1s ease, transform 1s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+</style>
+</head>
+<body>
+
+<!-- ====== SIDEBAR NAV ====== -->
+<nav class="sidenav">
+  <a href="#preambule" class="nav-link"><span>I · Préambule</span></a>
+  <a href="#logo" class="nav-link"><span>II · Logo</span></a>
+  <a href="#couleurs" class="nav-link"><span>III · Couleurs</span></a>
+  <a href="#typographie" class="nav-link"><span>IV · Typographie</span></a>
+  <a href="#composants" class="nav-link"><span>V · Composants</span></a>
+  <a href="#templates" class="nav-link"><span>VI · Templates</span></a>
+  <a href="#iconographie" class="nav-link"><span>VII · Iconographie</span></a>
+</nav>
+
+<!-- ====== COVER ====== -->
+<section class="cover">
+  <div class="cover-top">
+    <div class="cover-top-left">Charte graphique &nbsp;·&nbsp; Édition I</div>
+    <div class="cover-top-right">Avril 2026</div>
+  </div>
+
+  <div class="cover-center">
+    <!-- Médaillon BP -->
+    <div class="cover-medallion">
+      <svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="medGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FBF7EE"/>
+            <stop offset="100%" stop-color="#EBE0CB"/>
+          </radialGradient>
+        </defs>
+        <circle cx="110" cy="110" r="100" fill="url(#medGrad)"/>
+        <circle cx="110" cy="110" r="100" fill="none" stroke="#0F1E33" stroke-width="0.8"/>
+        <circle cx="110" cy="110" r="93" fill="none" stroke="#B08D5A" stroke-width="0.6"/>
+        <circle cx="110" cy="110" r="86" fill="none" stroke="#0F1E33" stroke-width="0.4" stroke-dasharray="2 3"/>
+        <!-- Étoiles aux 4 cardinaux -->
+        <text x="110" y="22" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="#B08D5A" font-style="italic">✦</text>
+        <text x="110" y="208" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="#B08D5A" font-style="italic">✦</text>
+        <text x="14" y="115" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="#B08D5A" font-style="italic">✦</text>
+        <text x="206" y="115" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="#B08D5A" font-style="italic">✦</text>
+        <!-- Monogramme BP -->
+        <text x="110" y="146" text-anchor="middle" font-family="Cormorant Garamond" font-size="120" font-style="italic" font-weight="500" fill="#0F1E33" letter-spacing="-6">BP</text>
+        <!-- Inscription circulaire haut -->
+        <path id="topArc" d="M 30 110 A 80 80 0 0 1 190 110" fill="none"/>
+        <text font-family="Marcellus" font-size="9" letter-spacing="3" fill="#0F1E33">
+          <textPath xlink:href="#topArc" startOffset="50%" text-anchor="middle">CABINET D'EXPERTISE</textPath>
+        </text>
+        <!-- Inscription circulaire bas -->
+        <path id="botArc" d="M 30 112 A 80 80 0 0 0 190 112" fill="none"/>
+        <text font-family="Marcellus" font-size="8" letter-spacing="3.5" fill="#B08D5A">
+          <textPath xlink:href="#botArc" startOffset="50%" text-anchor="middle">— ANNO MMXXVI —</textPath>
+        </text>
+      </svg>
+    </div>
+
+    <div class="cover-wordmark">
+      <div class="cover-doctitle">Dr Benjamin Paule</div>
+      <div class="cover-em"></div>
+      <div class="cover-tagline">Cabinet d'expertise médicale</div>
+    </div>
+  </div>
+
+  <div class="cover-bottom">
+    <div>Document confidentiel · Usage interne</div>
+    <div>Folio &nbsp;·&nbsp; <em>i</em></div>
+  </div>
+</section>
+
+<!-- ====== SOMMAIRE ====== -->
+<section class="page">
+  <div class="page-header">
+    <span class="page-meta">Sommaire</span>
+    <span class="page-meta-roman">i — vii</span>
+  </div>
+
+  <h2 class="page-title">Table des <em>matières</em></h2>
+  <span class="page-subtitle">Sept chapitres · Une identité</span>
+
+  <div class="sommaire-grid">
+    <a href="#preambule" class="sommaire-item">
+      <span class="somm-num">I.</span>
+      <span class="somm-title">Préambule &amp; Identité</span>
+      <span class="somm-folio">— 01 —</span>
+    </a>
+    <a href="#logo" class="sommaire-item">
+      <span class="somm-num">II.</span>
+      <span class="somm-title">Le monogramme</span>
+      <span class="somm-folio">— 09 —</span>
+    </a>
+    <a href="#couleurs" class="sommaire-item">
+      <span class="somm-num">III.</span>
+      <span class="somm-title">Palette chromatique</span>
+      <span class="somm-folio">— 17 —</span>
+    </a>
+    <a href="#typographie" class="sommaire-item">
+      <span class="somm-num">IV.</span>
+      <span class="somm-title">Typographie</span>
+      <span class="somm-folio">— 25 —</span>
+    </a>
+    <a href="#composants" class="sommaire-item">
+      <span class="somm-num">V.</span>
+      <span class="somm-title">Composants d'interface</span>
+      <span class="somm-folio">— 33 —</span>
+    </a>
+    <a href="#templates" class="sommaire-item">
+      <span class="somm-num">VI.</span>
+      <span class="somm-title">Documents &amp; rapports</span>
+      <span class="somm-folio">— 41 —</span>
+    </a>
+    <a href="#iconographie" class="sommaire-item">
+      <span class="somm-num">VII.</span>
+      <span class="somm-title">Iconographie</span>
+      <span class="somm-folio">— 49 —</span>
+    </a>
+  </div>
+</section>
+
+<!-- ====== I · PRÉAMBULE ====== -->
+<section class="page" id="preambule">
+  <div class="page-header">
+    <span class="page-meta">Chapitre Premier</span>
+    <span class="page-meta-roman">I</span>
+  </div>
+
+  <h2 class="page-title">Préambule <em>&amp;</em> Identité</h2>
+  <span class="page-subtitle">Le cabinet en quelques principes</span>
+
+  <p class="lede">
+    Le Cabinet du Dr Benjamin Paule incarne une expertise médicale au croisement de la médecine, du droit et du conseil. Sa charte graphique en traduit la promesse&nbsp;: rigueur, confidentialité, élégance discrète.
+  </p>
+
+  <div class="preambule-grid">
+    <div class="preambule-block">
+      <h3><span class="num">§ 01</span><em>Mission</em></h3>
+      <p>Le cabinet rend des avis d'expertise indépendants à destination des juridictions, des compagnies d'assurances et des particuliers en quête d'un second avis médical éclairé.</p>
+      <p>Chaque dossier engage la signature du Dr Paule&nbsp;: l'identité visuelle exprime cette responsabilité par une économie de moyens et une exigence de précision.</p>
+    </div>
+    <div class="preambule-block">
+      <h3><span class="num">§ 02</span><em>Promesse</em></h3>
+      <p>Une expertise médicale rendue avec la même tenue qu'un acte authentique&nbsp;: contradictoire, motivée, opposable. La charte porte cette promesse jusque dans les détails — papetterie, signature, correspondance.</p>
+    </div>
+  </div>
+
+  <div class="section-divider">
+    <span class="ornament">&mdash; ❦ &mdash;</span>
+  </div>
+
+  <h3 class="serif" style="font-size: 32px; font-style: italic; margin-bottom: 24px;">Quatre valeurs cardinales</h3>
+
+  <ul class="values-list">
+    <li>
+      <span class="v-num">i.</span>
+      <div>
+        <span class="v-title">Indépendance</span>
+        <span class="v-desc">Aucune affiliation institutionnelle ne préjuge des conclusions. La forme visuelle préserve cette neutralité.</span>
+      </div>
+    </li>
+    <li>
+      <span class="v-num">ii.</span>
+      <div>
+        <span class="v-title">Rigueur</span>
+        <span class="v-desc">Précision méthodologique, traçabilité des sources, hiérarchie typographique. La forme sert le fond.</span>
+      </div>
+    </li>
+    <li>
+      <span class="v-num">iii.</span>
+      <div>
+        <span class="v-title">Confidentialité</span>
+        <span class="v-desc">Une esthétique feutrée, sans démonstration. Le secret professionnel infuse jusqu'à la mise en page.</span>
+      </div>
+    </li>
+    <li>
+      <span class="v-num">iv.</span>
+      <div>
+        <span class="v-title">Lisibilité</span>
+        <span class="v-desc">Les rapports sont longs, les conclusions doivent rester limpides. La typographie a l'élégance d'un livre relié.</span>
+      </div>
+    </li>
+  </ul>
+
+  <div class="section-divider"><span class="ornament">&mdash; ❦ &mdash;</span></div>
+
+  <h3 class="serif" style="font-size: 32px; font-style: italic; margin-bottom: 16px;">Trois publics, un même registre</h3>
+
+  <div class="audience-list">
+    <div class="audience-card">
+      <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="24" y1="8" x2="24" y2="38"/>
+        <line x1="22" y1="38" x2="26" y2="38"/>
+        <line x1="18" y1="40" x2="30" y2="40"/>
+        <line x1="10" y1="16" x2="38" y2="16"/>
+        <path d="M10 16 L6 26 L14 26 Z"/>
+        <path d="M38 16 L34 26 L42 26 Z"/>
+        <circle cx="24" cy="8" r="1.5" fill="currentColor"/>
+      </svg>
+      <div class="label">Magistrats</div>
+      <div class="desc">Expertise judiciaire, missions ordonnées</div>
+    </div>
+    <div class="audience-card">
+      <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round">
+        <path d="M10 6 L32 6 L38 12 L38 42 L10 42 Z"/>
+        <path d="M32 6 L32 12 L38 12"/>
+        <line x1="14" y1="20" x2="34" y2="20"/>
+        <line x1="14" y1="26" x2="34" y2="26"/>
+        <line x1="14" y1="32" x2="28" y2="32"/>
+        <circle cx="32" cy="36" r="4" stroke-dasharray="1 1.5"/>
+      </svg>
+      <div class="label">Assurances</div>
+      <div class="desc">Dommages corporels, recours, contre-expertise</div>
+    </div>
+    <div class="audience-card">
+      <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round">
+        <path d="M14 8 L14 18 C14 24 18 28 22 28 C26 28 30 24 30 18 L30 8"/>
+        <line x1="14" y1="8" x2="11" y2="8"/>
+        <line x1="30" y1="8" x2="33" y2="8"/>
+        <path d="M22 28 L22 36 C22 40 26 42 30 42 C34 42 38 40 38 36"/>
+        <circle cx="38" cy="34" r="3"/>
+      </svg>
+      <div class="label">Particuliers</div>
+      <div class="desc">Second avis médical, conseil personnalisé</div>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    « Une expertise n'est crédible que si sa forme est <em>aussi soignée</em> que son contenu. La charte graphique est la première signature du cabinet — bien avant le dernier paragraphe. »
+    <span class="pull-quote-attr">— Note d'intention, édition I</span>
+  </div>
+</section>
+
+<!-- ====== II · LOGO ====== -->
+<section class="page" id="logo">
+  <div class="page-header">
+    <span class="page-meta">Chapitre Deuxième</span>
+    <span class="page-meta-roman">II</span>
+  </div>
+
+  <h2 class="page-title">Le <em>monogramme</em></h2>
+  <span class="page-subtitle">Marque · Déclinaisons · Construction</span>
+
+  <p class="lede">
+    Le monogramme s'inspire des sceaux notariaux et des ex-libris de bibliothèque ancienne. Deux capitales en italique <em>Cormorant Garamond</em> enchâssées dans un médaillon — une promesse d'authenticité.
+  </p>
+
+  <!-- Logo principal scène -->
+  <div class="logo-stage">
+    <span class="logo-corner-tr"></span>
+    <span class="logo-corner-bl"></span>
+    <svg width="280" height="280" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="110" cy="110" r="100" fill="none" stroke="#0F1E33" stroke-width="0.8"/>
+      <circle cx="110" cy="110" r="93" fill="none" stroke="#B08D5A" stroke-width="0.6"/>
+      <circle cx="110" cy="110" r="86" fill="none" stroke="#0F1E33" stroke-width="0.4" stroke-dasharray="2 3"/>
+      <text x="110" y="22" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="#B08D5A" font-style="italic">✦</text>
+      <text x="110" y="208" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="#B08D5A" font-style="italic">✦</text>
+      <text x="14" y="115" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="#B08D5A" font-style="italic">✦</text>
+      <text x="206" y="115" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="#B08D5A" font-style="italic">✦</text>
+      <text x="110" y="146" text-anchor="middle" font-family="Cormorant Garamond" font-size="120" font-style="italic" font-weight="500" fill="#0F1E33" letter-spacing="-6">BP</text>
+      <path id="topArc2" d="M 30 110 A 80 80 0 0 1 190 110" fill="none"/>
+      <text font-family="Marcellus" font-size="9" letter-spacing="3" fill="#0F1E33">
+        <textPath href="#topArc2" startOffset="50%" text-anchor="middle">CABINET D'EXPERTISE</textPath>
+      </text>
+      <path id="botArc2" d="M 30 112 A 80 80 0 0 0 190 112" fill="none"/>
+      <text font-family="Marcellus" font-size="8" letter-spacing="3.5" fill="#B08D5A">
+        <textPath href="#botArc2" startOffset="50%" text-anchor="middle">— ANNO MMXXVI —</textPath>
+      </text>
+    </svg>
+  </div>
+
+  <h3 class="serif" style="font-size: 28px; font-style: italic; margin-bottom: 14px;">Déclinaisons officielles</h3>
+  <p class="small" style="margin-bottom: 24px;">Quatre variantes valident l'ensemble des supports — papetterie, signature électronique, sceau, applications numériques.</p>
+
+  <div class="logo-variants">
+    <!-- Lockup horizontal -->
+    <div class="logo-variant-cell">
+      <svg width="280" height="80" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="58" font-family="Cormorant Garamond" font-size="64" font-style="italic" font-weight="500" fill="#0F1E33" letter-spacing="-3">BP</text>
+        <line x1="80" y1="20" x2="80" y2="60" stroke="#B08D5A" stroke-width="0.6"/>
+        <text x="92" y="34" font-family="Marcellus" font-size="11" letter-spacing="3" fill="#0F1E33">Dr BENJAMIN PAULE</text>
+        <text x="92" y="54" font-family="Marcellus" font-size="8.5" letter-spacing="3.2" fill="#B08D5A">CABINET D'EXPERTISE MÉDICALE</text>
+      </svg>
+      <div class="lv-label">Lockup horizontal</div>
+    </div>
+
+    <!-- Lockup empilé -->
+    <div class="logo-variant-cell">
+      <svg width="240" height="120" viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg">
+        <text x="120" y="62" text-anchor="middle" font-family="Cormorant Garamond" font-size="72" font-style="italic" font-weight="500" fill="#0F1E33" letter-spacing="-3">BP</text>
+        <line x1="80" y1="76" x2="160" y2="76" stroke="#B08D5A" stroke-width="0.6"/>
+        <text x="120" y="92" text-anchor="middle" font-family="Marcellus" font-size="10" letter-spacing="3.6" fill="#0F1E33">Dr BENJAMIN PAULE</text>
+        <text x="120" y="108" text-anchor="middle" font-family="Marcellus" font-size="7.5" letter-spacing="3.6" fill="#B08D5A">EXPERTISE MÉDICALE</text>
+      </svg>
+      <div class="lv-label">Lockup empilé</div>
+    </div>
+
+    <!-- Monogramme seul -->
+    <div class="logo-variant-cell dark">
+      <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="55" fill="none" stroke="#F4ECDD" stroke-width="0.6"/>
+        <circle cx="60" cy="60" r="50" fill="none" stroke="#B08D5A" stroke-width="0.5"/>
+        <text x="60" y="80" text-anchor="middle" font-family="Cormorant Garamond" font-size="64" font-style="italic" font-weight="500" fill="#F4ECDD" letter-spacing="-3">BP</text>
+      </svg>
+      <div class="lv-label">Monogramme · fond encre</div>
+    </div>
+
+    <!-- Sceau -->
+    <div class="logo-variant-cell sceau">
+      <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="55" fill="none" stroke="#FBF7EE" stroke-width="0.6"/>
+        <circle cx="60" cy="60" r="50" fill="none" stroke="#FBF7EE" stroke-width="0.4" stroke-dasharray="2 3"/>
+        <text x="60" y="80" text-anchor="middle" font-family="Cormorant Garamond" font-size="60" font-style="italic" font-weight="500" fill="#FBF7EE" letter-spacing="-3">BP</text>
+      </svg>
+      <div class="lv-label">Sceau de signature</div>
+    </div>
+  </div>
+
+  <h3 class="serif" style="font-size: 28px; font-style: italic; margin-bottom: 14px;">Construction &amp; espace de respiration</h3>
+
+  <div class="construct-stage">
+    <svg width="320" height="240" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" style="position:relative; z-index:1;">
+      <!-- Cadre x = hauteur du B -->
+      <line x1="60" y1="40" x2="260" y2="40" stroke="#B08D5A" stroke-width="0.5" stroke-dasharray="4 2"/>
+      <line x1="60" y1="200" x2="260" y2="200" stroke="#B08D5A" stroke-width="0.5" stroke-dasharray="4 2"/>
+      <line x1="60" y1="40" x2="60" y2="200" stroke="#B08D5A" stroke-width="0.5" stroke-dasharray="4 2"/>
+      <line x1="260" y1="40" x2="260" y2="200" stroke="#B08D5A" stroke-width="0.5" stroke-dasharray="4 2"/>
+      <!-- Mesures -->
+      <text x="160" y="30" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#B08D5A">x</text>
+      <text x="50" y="124" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="#B08D5A">x</text>
+      <!-- Logo -->
+      <text x="160" y="160" text-anchor="middle" font-family="Cormorant Garamond" font-size="120" font-style="italic" font-weight="500" fill="#0F1E33" letter-spacing="-6">BP</text>
+      <!-- Légende -->
+      <text x="160" y="226" text-anchor="middle" font-family="Marcellus" font-size="9" letter-spacing="2.5" fill="#0F1E33">L'ESPACE DE PROTECTION ÉQUIVAUT À LA HAUTEUR DE CAPITALE</text>
+    </svg>
+  </div>
+
+  <div class="logo-rules">
+    <div class="rule-card">
+      <span class="num">i.</span>
+      <h4>Taille minimale</h4>
+      <p>Monogramme&nbsp;: 24&nbsp;px en numérique, 12&nbsp;mm en impression. En deçà, recourir au sceau seul.</p>
+    </div>
+    <div class="rule-card">
+      <span class="num">ii.</span>
+      <h4>Espace libre</h4>
+      <p>Une zone équivalente à la hauteur d'une capitale doit entourer la marque. Aucun élément graphique ne peut s'y immiscer.</p>
+    </div>
+    <div class="rule-card">
+      <span class="num">iii.</span>
+      <h4>Fond admissible</h4>
+      <p>Encre, parchemin, albâtre, or bruni, sceau. Toute autre couleur exige une validation en chef de cabinet.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"><span class="ornament">&mdash; ❦ &mdash;</span></div>
+
+  <h3 class="serif" style="font-size: 28px; font-style: italic; margin-bottom: 14px;">Usages prohibés</h3>
+  <p class="small" style="margin-bottom: 24px;">La marque ne tolère ni déformation, ni rotation, ni artifice. Les exemples suivants sont expressément proscrits.</p>
+
+  <div class="dont-grid">
+    <div class="dont-cell"><div class="label">Étirement</div></div>
+    <div class="dont-cell"><div class="label">Rotation</div></div>
+    <div class="dont-cell"><div class="label">Recoloration libre</div></div>
+    <div class="dont-cell"><div class="label">Effets &amp; ombres</div></div>
+    <div class="dont-cell"><div class="label">Substitution typo</div></div>
+    <div class="dont-cell"><div class="label">Fond photographique</div></div>
+  </div>
+</section>
+
+<!-- ====== III · COULEURS ====== -->
+<section class="page" id="couleurs">
+  <div class="page-header">
+    <span class="page-meta">Chapitre Troisième</span>
+    <span class="page-meta-roman">III</span>
+  </div>
+
+  <h2 class="page-title">Palette <em>chromatique</em></h2>
+  <span class="page-subtitle">Encre · Parchemin · Or bruni · Sceau · Brume</span>
+
+  <p class="lede">
+    Une palette pensée comme un atelier de relieur — encre profonde, parchemin chaleureux, or bruni en accent. Le rouge sceau veille, n'apparaît qu'aux moments solennels.
+  </p>
+
+  <!-- Bandeau couleurs -->
+  <div class="color-hero">
+    <div style="background:#0F1E33;"><span style="color:#F4ECDD;">Encre</span></div>
+    <div style="background:#F4ECDD;"><span style="color:#0F1E33;">Parchemin</span></div>
+    <div style="background:#B08D5A;"><span style="color:#FBF7EE;">Or bruni</span></div>
+    <div style="background:#6B1F2A;"><span style="color:#FBF7EE;">Sceau</span></div>
+    <div style="background:#A89F8E;"><span style="color:#FBF7EE;">Brume</span></div>
+  </div>
+
+  <h3 class="serif" style="font-size: 28px; font-style: italic; margin-bottom: 24px;">Couleurs primaires</h3>
+
+  <div class="color-grid">
+    <!-- Encre -->
+    <div class="color-card">
+      <div class="color-swatch dark" style="background:#0F1E33;">
+        <span class="swatch-tag">№ 01</span>
+        <span class="swatch-name">Encre de nuit</span>
+      </div>
+      <div class="color-info">
+        <span class="role">Couleur cardinale. Texte courant, en-têtes officiels, lignes de signature.</span>
+        <div class="color-codes">
+          <span class="key">HEX</span><span class="val">#0F1E33</span>
+          <span class="key">RGB</span><span class="val">15 · 30 · 51</span>
+          <span class="key">CMYK</span><span class="val">88 · 68 · 33 · 73</span>
+          <span class="key">PMS</span><span class="val">2767 C</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Parchemin -->
+    <div class="color-card">
+      <div class="color-swatch light" style="background:#F4ECDD;">
+        <span class="swatch-tag">№ 02</span>
+        <span class="swatch-name">Parchemin</span>
+      </div>
+      <div class="color-info">
+        <span class="role">Fond de référence. Évoque le papier de notaire, le vélin et la lettre cachetée.</span>
+        <div class="color-codes">
+          <span class="key">HEX</span><span class="val">#F4ECDD</span>
+          <span class="key">RGB</span><span class="val">244 · 236 · 221</span>
+          <span class="key">CMYK</span><span class="val">3 · 5 · 12 · 0</span>
+          <span class="key">PMS</span><span class="val">7527 C</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Or bruni -->
+    <div class="color-card">
+      <div class="color-swatch light" style="background:#B08D5A;">
+        <span class="swatch-tag">№ 03</span>
+        <span class="swatch-name">Or bruni</span>
+      </div>
+      <div class="color-info">
+        <span class="role">Accent unique. Filets, monogrammes, ornements. Jamais en aplats étendus.</span>
+        <div class="color-codes">
+          <span class="key">HEX</span><span class="val">#B08D5A</span>
+          <span class="key">RGB</span><span class="val">176 · 141 · 90</span>
+          <span class="key">CMYK</span><span class="val">22 · 36 · 65 · 23</span>
+          <span class="key">PMS</span><span class="val">872 C</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="serif" style="font-size: 28px; font-style: italic; margin: 30px 0 24px;">Couleurs de soutien</h3>
+
+  <div class="color-grid">
+    <!-- Sceau -->
+    <div class="color-card">
+      <div class="color-swatch dark" style="background:#6B1F2A;">
+        <span class="swatch-tag">№ 04</span>
+        <span class="swatch-name">Rouge sceau</span>
+      </div>
+      <div class="color-info">
+        <span class="role">Signal de gravité. Mention « confidentiel », classification, alertes éditoriales.</span>
+        <div class="color-codes">
+          <span class="key">HEX</span><span class="val">#6B1F2A</span>
+          <span class="key">RGB</span><span class="val">107 · 31 · 42</span>
+          <span class="key">CMYK</span><span class="val">36 · 87 · 67 · 50</span>
+          <span class="key">PMS</span><span class="val">7421 C</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Albâtre -->
+    <div class="color-card">
+      <div class="color-swatch light" style="background:#FBF7EE;">
+        <span class="swatch-tag">№ 05</span>
+        <span class="swatch-name">Albâtre</span>
+      </div>
+      <div class="color-info">
+        <span class="role">Surface alternative pour cartes, encadrés et zones de respiration.</span>
+        <div class="color-codes">
+          <span class="key">HEX</span><span class="val">#FBF7EE</span>
+          <span class="key">RGB</span><span class="val">251 · 247 · 238</span>
+          <span class="key">CMYK</span><span class="val">1 · 2 · 6 · 0</span>
+          <span class="key">PMS</span><span class="val">11-0107 TPX</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brume -->
+    <div class="color-card">
+      <div class="color-swatch light" style="background:#A89F8E;">
+        <span class="swatch-tag">№ 06</span>
+        <span class="swatch-name">Brume</span>
+      </div>
+      <div class="color-info">
+        <span class="role">Texte secondaire, légendes, notes. Hiérarchise sans alourdir.</span>
+        <div class="color-codes">
+          <span class="key">HEX</span><span class="val">#A89F8E</span>
+          <span class="key">RGB</span><span class="val">168 · 159 · 142</span>
+          <span class="key">CMYK</span><span class="val">31 · 31 · 41 · 12</span>
+          <span class="key">PMS</span><span class="val">Warm Gray 5 C</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ardoise -->
+    <div class="color-card">
+      <div class="color-swatch dark" style="background:#2E2E33;">
+        <span class="swatch-tag">№ 07</span>
+        <span class="swatch-name">Ardoise</span>
+      </div>
+      <div class="color-info">
+        <span class="role">Texte de corps long. Plus doux que l'encre, mieux toléré sur de longs paragraphes.</span>
+        <div class="color-codes">
+          <span class="key">HEX</span><span class="val">#2E2E33</span>
+          <span class="key">RGB</span><span class="val">46 · 46 · 51</span>
+          <span class="key">CMYK</span><span class="val">73 · 67 · 56 · 65</span>
+          <span class="key">PMS</span><span class="val">Black 6 C</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"><span class="ornament">&mdash; ❦ &mdash;</span></div>
+
+  <h3 class="serif" style="font-size: 28px; font-style: italic; margin-bottom: 14px;">Proportions d'usage</h3>
+  <p class="small" style="margin-bottom: 16px;">Règle 60 · 30 · 7 · 2 · 1 — calibrée pour une mise en page papier comme numérique.</p>
+
+  <div class="proportions">
+    <div style="background:#F4ECDD; flex:60; color:#0F1E33;">60% · Parchemin</div>
+    <div style="background:#0F1E33; flex:30; color:#F4ECDD;">30% · Encre</div>
+    <div style="background:#A89F8E; flex:7; color:#FBF7EE;">7%</div>
+    <div style="background:#B08D5A; flex:2; color:#FBF7EE;">2%</div>
+    <div style="background:#6B1F2A; flex:1; color:#FBF7EE;">1%</div>
+  </div>
+  <p class="fine-print">Or bruni et rouge sceau&nbsp;: emploi parcimonieux uniquement.</p>
+
+  <h3 class="serif" style="font-size: 28px; font-style: italic; margin: 60px 0 14px;">Tableau d'application</h3>
+
+  <table class="usage-table">
+    <thead>
+      <tr><th>Couleur</th><th>Emploi recommandé</th><th>À proscrire</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="dot" style="background:#0F1E33;"></span>Encre de nuit</td>
+        <td>Texte courant, en-têtes, signatures</td>
+        <td>Aplats sur grande surface en impression</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#F4ECDD;"></span>Parchemin</td>
+        <td>Fond principal de tous supports</td>
+        <td>Texte sur fond clair concurrent</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#B08D5A;"></span>Or bruni</td>
+        <td>Filets, monogrammes, ornements</td>
+        <td>Texte courant — réserver au décor</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#6B1F2A;"></span>Rouge sceau</td>
+        <td>Mentions de classification, alertes</td>
+        <td>Toute communication ordinaire</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#A89F8E;"></span>Brume</td>
+        <td>Texte secondaire, métadonnées</td>
+        <td>Titres ou éléments hiérarchiques forts</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ====== IV · TYPOGRAPHIE ====== -->
+<section class="page" id="typographie">
+  <div class="page-header">
+    <span class="page-meta">Chapitre Quatrième</span>
+    <span class="page-meta-roman">IV</span>
+  </div>
+
+  <h2 class="page-title"><em>Typographie</em></h2>
+  <span class="page-subtitle">Trois familles · Une bibliothèque</span>
+
+  <p class="lede">
+    L'écosystème typographique privilégie le serif. Cormorant Garamond pour la voix éditoriale, Spectral pour la lecture longue, Marcellus pour les inscriptions. Une mention monospace pour les références techniques.
+  </p>
+
+  <!-- Cormorant Garamond -->
+  <div class="type-specimen">
+    <div class="label-row">
+      <span class="family">Cormorant Garamond</span>
+      <span class="role">Display &amp; titres</span>
+    </div>
+    <div class="specimen-letter serif" style="font-style: italic;">Aa</div>
+    <div class="specimen-pangram serif" style="font-style: italic;">L'expertise médicale s'écrit avec la précision d'un acte authentique.</div>
+
+    <div class="weights-row">
+      <div class="weight-cell">
+        <span class="w-label">300 · LIGHT</span>
+        <span class="w-sample serif" style="font-weight:300;">Cormorant</span>
+      </div>
+      <div class="weight-cell">
+        <span class="w-label">400 · REGULAR</span>
+        <span class="w-sample serif" style="font-weight:400;">Cormorant</span>
+      </div>
+      <div class="weight-cell">
+        <span class="w-label">500 · MEDIUM</span>
+        <span class="w-sample serif" style="font-weight:500;">Cormorant</span>
+      </div>
+      <div class="weight-cell">
+        <span class="w-label">400 italic</span>
+        <span class="w-sample serif" style="font-weight:400; font-style: italic;">Cormorant</span>
+      </div>
+    </div>
+
+    <div class="specimen-glyphs">
+      <span class="serif" style="font-style: italic;">A</span>
+      <span class="serif" style="font-style: italic;">B</span>
+      <span class="serif" style="font-style: italic;">G</span>
+      <span class="serif" style="font-style: italic;">M</span>
+      <span class="serif" style="font-style: italic;">Q</span>
+      <span class="serif" style="font-style: italic;">R</span>
+      <span class="serif" style="font-style: italic;">a</span>
+      <span class="serif" style="font-style: italic;">e</span>
+      <span class="serif" style="font-style: italic;">g</span>
+      <span class="serif" style="font-style: italic;">k</span>
+      <span class="serif" style="font-style: italic;">y</span>
+      <span class="serif" style="font-style: italic;">æ</span>
+      <span class="serif" style="font-style: italic;">&amp;</span>
+      <span class="serif" style="font-style: italic;">§</span>
+      <span class="serif" style="font-style: italic;">¶</span>
+    </div>
+  </div>
+
+  <!-- Spectral -->
+  <div class="type-specimen">
+    <div class="label-row">
+      <span class="family">Spectral</span>
+      <span class="role">Texte courant</span>
+    </div>
+    <div class="specimen-letter body-serif">Aa</div>
+    <div class="specimen-pangram body-serif" style="font-weight:400;">Le rapport établit, motive, opposable. La lecture s'écoule sans hâte ni heurt.</div>
+
+    <div class="weights-row">
+      <div class="weight-cell"><span class="w-label">300</span><span class="w-sample body-serif" style="font-weight:300;">Spectral</span></div>
+      <div class="weight-cell"><span class="w-label">400</span><span class="w-sample body-serif" style="font-weight:400;">Spectral</span></div>
+      <div class="weight-cell"><span class="w-label">500</span><span class="w-sample body-serif" style="font-weight:500;">Spectral</span></div>
+      <div class="weight-cell"><span class="w-label">400 italic</span><span class="w-sample body-serif" style="font-weight:400; font-style: italic;">Spectral</span></div>
+    </div>
+  </div>
+
+  <!-- Marcellus -->
+  <div class="type-specimen">
+    <div class="label-row">
+      <span class="family">Marcellus</span>
+      <span class="role">Inscriptions &amp; capitales</span>
+    </div>
+    <div class="specimen-letter inscr" style="font-size: clamp(80px, 14vw, 160px); letter-spacing: 0.08em;">A B C</div>
+    <div class="specimen-pangram inscr" style="font-size: clamp(18px, 2vw, 26px); letter-spacing: 0.32em;">CABINET D'EXPERTISE · ANNO MMXXVI</div>
+  </div>
+
+  <!-- JetBrains Mono -->
+  <div class="type-specimen">
+    <div class="label-row">
+      <span class="family">JetBrains Mono</span>
+      <span class="role">Notes &amp; références techniques</span>
+    </div>
+    <div class="specimen-pangram mono" style="font-size: clamp(18px, 2.4vw, 28px); font-weight:400;">art. R.4127-105 CSP — réf. 2026/EXP/047</div>
+  </div>
+
+  <h3 class="serif" style="font-size: 28px; font-style: italic; margin: 50px 0 20px;">Échelle typographique</h3>
+
+  <div class="scale-row">
+    <span class="scale-name">Display</span>
+    <span class="scale-spec mono">88 / 96 · 300</span>
+    <span class="scale-sample" style="font-size: 56px; font-style: italic; line-height: 1.1;">Une expertise</span>
+  </div>
+  <div class="scale-row">
+    <span class="scale-name">Hero</span>
+    <span class="scale-spec mono">56 / 64 · 400</span>
+    <span class="scale-sample" style="font-size: 38px; font-style: italic; line-height: 1.15;">Le rapport d'expertise</span>
+  </div>
+  <div class="scale-row">
+    <span class="scale-name">Titre</span>
+    <span class="scale-spec mono">32 / 40 · 400</span>
+    <span class="scale-sample" style="font-size: 26px; line-height: 1.2;">Conclusions médico-légales</span>
+  </div>
+  <div class="scale-row">
+    <span class="scale-name">Sous-titre</span>
+    <span class="scale-spec mono">22 / 28 · 500</span>
+    <span class="scale-sample" style="font-size: 18px; font-weight:500; line-height: 1.3;">Antécédents du patient</span>
+  </div>
+  <div class="scale-row">
+    <span class="scale-name">Lede</span>
+    <span class="scale-spec mono">20 / 30 · 300 it.</span>
+    <span class="scale-sample" style="font-size: 18px; font-style: italic; font-weight: 300; line-height: 1.4;">Préambule au présent rapport</span>
+  </div>
+  <div class="scale-row">
+    <span class="scale-name">Corps</span>
+    <span class="scale-spec mono">16 / 26 · 400</span>
+    <span class="scale-sample body-serif" style="font-size: 16px; line-height: 1.6;">Texte courant, lecture continue, paragraphes longs.</span>
+  </div>
+  <div class="scale-row">
+    <span class="scale-name">Note</span>
+    <span class="scale-spec mono">13 / 20 · 400</span>
+    <span class="scale-sample body-serif" style="font-size: 13px; line-height: 1.5; color: var(--ardoise);">Note de bas de page, mention légale, légende.</span>
+  </div>
+  <div class="scale-row">
+    <span class="scale-name">Inscript.</span>
+    <span class="scale-spec mono">11 / 16 · ↔ 0.28</span>
+    <span class="scale-sample inscr" style="font-size: 11px;">Cabinet d'expertise médicale</span>
+  </div>
+</section>
+
+<!-- ====== V · COMPOSANTS ====== -->
+<section class="page" id="composants">
+  <div class="page-header">
+    <span class="page-meta">Chapitre Cinquième</span>
+    <span class="page-meta-roman">V</span>
+  </div>
+
+  <h2 class="page-title">Composants <em>d'interface</em></h2>
+  <span class="page-subtitle">Boutons · Cartes · Formulaires · Tableaux</span>
+
+  <p class="lede">
+    Une bibliothèque restreinte, déclinable. Chaque composant respecte la hiérarchie chromatique et les filets or. Le mouvement reste discret&nbsp;: une transition d'interlettrage suffit à dire l'attention.
+  </p>
+
+  <div class="comp-grid">
+    <!-- Boutons -->
+    <div class="comp-cell">
+      <div class="comp-label">Boutons · Hiérarchie</div>
+      <button class="btn btn-primary">Lire le rapport</button>
+      <button class="btn btn-secondary">Télécharger</button>
+      <button class="btn btn-gold">Demander un devis</button>
+      <button class="btn btn-text">Voir tous les dossiers</button>
+    </div>
+
+    <!-- Badges -->
+    <div class="comp-cell">
+      <div class="comp-label">Badges &amp; étiquettes</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+        <span class="badge badge-encre">Confidentiel</span>
+        <span class="badge badge-gold">Expertise</span>
+        <span class="badge badge-sceau">Urgent</span>
+        <span class="badge badge-filled">Validé</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+        <span class="badge badge-encre">№ 2026 / 047</span>
+        <span class="badge badge-gold">Tribunal de Lille</span>
+      </div>
+    </div>
+
+    <!-- Formulaire -->
+    <div class="comp-cell">
+      <div class="comp-label">Formulaire</div>
+      <div class="form-group">
+        <label>Nom de la juridiction</label>
+        <input type="text" placeholder="Tribunal judiciaire de…">
+      </div>
+      <div class="form-group">
+        <label>Référence du dossier</label>
+        <input type="text" placeholder="2026 / EXP / …">
+      </div>
+      <div class="form-group">
+        <label>Type de mission</label>
+        <select>
+          <option>Expertise judiciaire</option>
+          <option>Dommage corporel</option>
+          <option>Second avis médical</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Carte élégante -->
+    <div class="comp-cell">
+      <div class="comp-label">Carte d'expertise</div>
+      <div class="elegant-card">
+        <span class="card-tag">№ 2026 / 047</span>
+        <h4>Mission d'expertise</h4>
+        <p>Évaluation des préjudices consécutifs à un accident de la voie publique. Rapport contradictoire en deux temps.</p>
+      </div>
+    </div>
+
+    <!-- Callout -->
+    <div class="comp-cell">
+      <div class="comp-label">Encadré informatif</div>
+      <div class="callout">
+        <svg class="callout-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <circle cx="24" cy="24" r="18"/>
+          <line x1="24" y1="14" x2="24" y2="26"/>
+          <circle cx="24" cy="32" r="0.8" fill="currentColor"/>
+        </svg>
+        <div>
+          <div class="callout-title">Mention de confidentialité</div>
+          <p>Le présent document est couvert par le secret professionnel et ne peut être communiqué qu'aux destinataires nommément désignés.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tableau -->
+    <div class="comp-cell">
+      <div class="comp-label">Tableau de barème</div>
+      <table class="elegant-table">
+        <thead>
+          <tr><th>Item</th><th>Évaluation</th><th>Période</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>DFTT</td><td>30 jours</td><td>Aigu</td></tr>
+          <tr><td>DFTP 50%</td><td>60 jours</td><td>Subaigu</td></tr>
+          <tr><td>AIPP</td><td>5 %</td><td>Définitif</td></tr>
+          <tr><td>Souffrances</td><td>3 / 7</td><td>Modérées</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h3 class="serif" style="font-size: 28px; font-style: italic; margin: 30px 0 14px;">Citation éditoriale</h3>
+
+  <div class="pull-quote">
+    « L'élégance d'un composant se mesure à ce qu'on lui retire — non à ce qu'on lui ajoute. Une bordure superflue trahit la confiance que le contenu mérite. »
+    <span class="pull-quote-attr">— Note d'atelier</span>
+  </div>
+</section>
+
+<!-- ====== VI · TEMPLATES DOCUMENTS ====== -->
+<section class="page" id="templates">
+  <div class="page-header">
+    <span class="page-meta">Chapitre Sixième</span>
+    <span class="page-meta-roman">VI</span>
+  </div>
+
+  <h2 class="page-title">Documents <em>&amp; rapports</em></h2>
+  <span class="page-subtitle">Trois gabarits canoniques</span>
+
+  <p class="lede">
+    Le rapport d'expertise est l'objet matériel par lequel le cabinet existe aux yeux de ses interlocuteurs. Trois gabarits l'organisent&nbsp;: la page de garde, la lettre à en-tête, le pied de signature.
+  </p>
+
+  <div class="tpl-grid">
+    <!-- Page de garde -->
+    <div>
+      <div class="tpl-mock tpl-cover">
+        <div class="cv-top">— Cabinet d'expertise médicale —</div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:14px;">
+          <div class="cv-medal">BP</div>
+          <div style="width: 100px; height: 1px; background: #B08D5A;"></div>
+          <div class="cv-title">Rapport d'expertise</div>
+          <div class="cv-subtitle">Dommage corporel</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 8.5px; letter-spacing: 0.12em; color: #A89F8E; margin-top: 18px;">№ 2026 / EXP / 047</div>
+        </div>
+        <div style="display: flex; flex-direction:column; align-items:center; gap:14px;">
+          <div class="cv-classify">Document confidentiel</div>
+          <div class="cv-bottom">Avril 2026</div>
+        </div>
+      </div>
+      <div class="tpl-label">Page de garde · A4</div>
+    </div>
+
+    <!-- Letterhead -->
+    <div>
+      <div class="tpl-mock tpl-letterhead">
+        <div class="lh-top">
+          <div class="lh-logo-mini">BP</div>
+          <div class="lh-meta">
+            Dr Benjamin Paule<br>
+            Cabinet d'expertise<br>
+            12 rue ___________<br>
+            +33 — — — — — —
+          </div>
+        </div>
+        <div class="lh-doctitle">Conclusions provisoires</div>
+        <div class="lh-ref">— № 2026 / EXP / 047 —</div>
+        <div class="lh-body">
+          <h5>I. Identification</h5>
+          <div class="ll medium"></div>
+          <div class="ll"></div>
+          <div class="ll short"></div>
+          <h5>II. Constatations</h5>
+          <div class="ll"></div>
+          <div class="ll medium"></div>
+          <div class="ll"></div>
+          <div class="ll short"></div>
+          <h5>III. Discussion</h5>
+          <div class="ll"></div>
+          <div class="ll"></div>
+          <div class="ll medium"></div>
+        </div>
+        <div class="lh-foot">
+          <span>Folio 03 / 12</span>
+          <span>BP — 2026</span>
+        </div>
+      </div>
+      <div class="tpl-label">En-tête de rapport</div>
+    </div>
+
+    <!-- Signature -->
+    <div>
+      <div class="tpl-mock tpl-sig">
+        <div class="lh-top">
+          <div class="lh-logo-mini">BP</div>
+          <div class="lh-meta">
+            Folio terminal<br>
+            Page 12 / 12
+          </div>
+        </div>
+        <div class="lh-body" style="padding-top: 12px;">
+          <h5>Conclusion</h5>
+          <div class="ll"></div>
+          <div class="ll medium"></div>
+          <div class="ll"></div>
+          <div class="ll short"></div>
+          <div style="height: 30px;"></div>
+          <div class="ll"></div>
+          <div class="ll medium"></div>
+        </div>
+
+        <div class="sig-stamp">BP</div>
+
+        <div class="sig-content" style="margin-top: 30px;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 30px;">
+            <div style="flex: 1;">
+              <div class="lh-meta" style="text-align: left; font-size: 7.5px;">Fait à _________<br>le ___ / ___ / 2026</div>
+            </div>
+            <div style="flex: 1;">
+              <div class="sig-line"></div>
+              <div class="sig-name">Dr Benjamin Paule</div>
+              <div class="sig-qual">Médecin expert</div>
+            </div>
+          </div>
+        </div>
+        <div class="lh-foot" style="margin-top: 20px;">
+          <span>BP — 2026</span>
+          <span>Signature &amp; cachet</span>
+        </div>
+      </div>
+      <div class="tpl-label">Pied de signature</div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 40px;">
+    <svg class="callout-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M10 6 L32 6 L38 12 L38 42 L10 42 Z"/>
+      <path d="M32 6 L32 12 L38 12"/>
+    </svg>
+    <div>
+      <div class="callout-title">Spécifications papier</div>
+      <p>Format A4 · Marges 32/26/26/26&nbsp;mm · Papier ivoire 100&nbsp;g/m² (rapport) ou 200&nbsp;g/m² (page de garde) · Impression noir + or à chaud sur les éléments de marque.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== VII · ICONOGRAPHIE ====== -->
+<section class="page" id="iconographie">
+  <div class="page-header">
+    <span class="page-meta">Chapitre Septième</span>
+    <span class="page-meta-roman">VII</span>
+  </div>
+
+  <h2 class="page-title"><em>Iconographie</em></h2>
+  <span class="page-subtitle">Système de pictogrammes &amp; illustrations</span>
+
+  <p class="lede">
+    Une bibliothèque iconographique gravée — trait monoligne de 1,25&nbsp;px, terminaisons rondes, géométrie sobre. Chaque pictogramme se loge dans une grille de 24×24 et conserve un blanc tournant identique.
+  </p>
+
+  <div class="icon-grid">
+    <!-- Balance -->
+    <div class="icon-cell">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="24" y1="8" x2="24" y2="38"/>
+        <line x1="22" y1="38" x2="26" y2="38"/>
+        <line x1="18" y1="40" x2="30" y2="40"/>
+        <line x1="10" y1="16" x2="38" y2="16"/>
+        <path d="M10 16 L6 26 L14 26 Z"/>
+        <path d="M38 16 L34 26 L42 26 Z"/>
+        <circle cx="24" cy="8" r="1.5" fill="currentColor"/>
+      </svg>
+      <span class="ic-name">Balance</span>
+    </div>
+
+    <!-- Document -->
+    <div class="icon-cell">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round">
+        <path d="M10 6 L32 6 L38 12 L38 42 L10 42 Z"/>
+        <path d="M32 6 L32 12 L38 12"/>
+        <line x1="14" y1="20" x2="34" y2="20"/>
+        <line x1="14" y1="26" x2="34" y2="26"/>
+        <line x1="14" y1="32" x2="28" y2="32"/>
+      </svg>
+      <span class="ic-name">Rapport</span>
+    </div>
+
+    <!-- Stéthoscope -->
+    <div class="icon-cell">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round">
+        <path d="M14 8 L14 18 C14 24 18 28 22 28 C26 28 30 24 30 18 L30 8"/>
+        <line x1="14" y1="8" x2="11" y2="8"/>
+        <line x1="30" y1="8" x2="33" y2="8"/>
+        <path d="M22 28 L22 36 C22 40 26 42 30 42 C34 42 38 40 38 36"/>
+        <circle cx="38" cy="34" r="3"/>
+      </svg>
+      <span class="ic-name">Médecine</span>
+    </div>
+
+    <!-- Loupe -->
+    <div class="icon-cell">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round">
+        <circle cx="20" cy="20" r="11"/>
+        <line x1="28" y1="28" x2="38" y2="38"/>
+      </svg>
+      <span class="ic-name">Investigation</span>
+    </div>
+
+    <!-- Sceau -->
+    <div class="icon-cell">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25">
+        <circle cx="24" cy="24" r="14"/>
+        <circle cx="24" cy="24" r="11" stroke-dasharray="1.5 2"/>
+        <text x="24" y="28" text-anchor="middle" font-family="Cormorant Garamond" font-size="11" font-style="italic" fill="currentColor" stroke="none">BP</text>
+      </svg>
+      <span class="ic-name">Sceau</span>
+    </div>
+
+    <!-- Plume -->
+    <div class="icon-cell">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 6 L34 6 L24 42 Z"/>
+        <line x1="24" y1="14" x2="24" y2="36"/>
+        <circle cx="24" cy="22" r="2"/>
+      </svg>
+      <span class="ic-name">Signature</span>
+    </div>
+
+    <!-- Cadenas -->
+    <div class="icon-cell">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="10" y="22" width="28" height="20" rx="1"/>
+        <path d="M16 22 L16 14 C16 10 19 6 24 6 C29 6 32 10 32 14 L32 22"/>
+        <circle cx="24" cy="30" r="2"/>
+        <line x1="24" y1="32" x2="24" y2="36"/>
+      </svg>
+      <span class="ic-name">Confidentiel</span>
+    </div>
+
+    <!-- Coffre -->
+    <div class="icon-cell">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round">
+        <rect x="6" y="10" width="36" height="30"/>
+        <circle cx="20" cy="25" r="6"/>
+        <circle cx="20" cy="25" r="2"/>
+        <line x1="20" y1="19" x2="20" y2="17"/>
+        <line x1="20" y1="33" x2="20" y2="31"/>
+        <line x1="14" y1="25" x2="12" y2="25"/>
+        <line x1="26" y1="25" x2="28" y2="25"/>
+        <line x1="34" y1="22" x2="38" y2="22"/>
+        <line x1="34" y1="28" x2="38" y2="28"/>
+      </svg>
+      <span class="ic-name">Archives</span>
+    </div>
+
+    <!-- Code/livre -->
+    <div class="icon-cell">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round">
+        <path d="M6 10 L6 40 L24 36 L24 12 Z"/>
+        <path d="M42 10 L42 40 L24 36 L24 12 Z"/>
+        <line x1="10" y1="18" x2="20" y2="17"/>
+        <line x1="10" y1="24" x2="20" y2="23"/>
+        <line x1="10" y1="30" x2="20" y2="29"/>
+        <line x1="28" y1="17" x2="38" y2="18"/>
+        <line x1="28" y1="23" x2="38" y2="24"/>
+        <line x1="28" y1="29" x2="38" y2="30"/>
+      </svg>
+      <span class="ic-name">Code</span>
+    </div>
+
+    <!-- Calendrier -->
+    <div class="icon-cell">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round">
+        <rect x="6" y="10" width="36" height="32"/>
+        <line x1="6" y1="18" x2="42" y2="18"/>
+        <line x1="14" y1="6" x2="14" y2="14"/>
+        <line x1="34" y1="6" x2="34" y2="14"/>
+        <circle cx="24" cy="28" r="3"/>
+      </svg>
+      <span class="ic-name">Audience</span>
+    </div>
+
+    <!-- Enveloppe -->
+    <div class="icon-cell">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="6" y="12" width="36" height="24"/>
+        <path d="M6 12 L24 26 L42 12"/>
+        <circle cx="24" cy="32" r="3" fill="currentColor" stroke="none" opacity="0.5"/>
+      </svg>
+      <span class="ic-name">Correspondance</span>
+    </div>
+
+    <!-- Bouclier -->
+    <div class="icon-cell">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M24 6 L8 12 L8 24 C8 32 14 40 24 42 C34 40 40 32 40 24 L40 12 Z"/>
+        <path d="M18 24 L22 28 L30 20"/>
+      </svg>
+      <span class="ic-name">Protection</span>
+    </div>
+
+    <!-- Croix médicale -->
+    <div class="icon-cell">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round">
+        <circle cx="24" cy="24" r="16"/>
+        <line x1="24" y1="14" x2="24" y2="34"/>
+        <line x1="14" y1="24" x2="34" y2="24"/>
+      </svg>
+      <span class="ic-name">Soin</span>
+    </div>
+
+    <!-- Œil/avis -->
+    <div class="icon-cell">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round">
+        <path d="M4 24 C8 14 16 8 24 8 C32 8 40 14 44 24 C40 34 32 40 24 40 C16 40 8 34 4 24 Z"/>
+        <circle cx="24" cy="24" r="6"/>
+        <circle cx="24" cy="24" r="2" fill="currentColor"/>
+      </svg>
+      <span class="ic-name">Second avis</span>
+    </div>
+
+    <!-- Tribunal -->
+    <div class="icon-cell">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 14 L24 6 L42 14"/>
+        <line x1="6" y1="14" x2="42" y2="14"/>
+        <line x1="10" y1="16" x2="10" y2="36"/>
+        <line x1="18" y1="16" x2="18" y2="36"/>
+        <line x1="30" y1="16" x2="30" y2="36"/>
+        <line x1="38" y1="16" x2="38" y2="36"/>
+        <line x1="4" y1="38" x2="44" y2="38"/>
+        <line x1="6" y1="42" x2="42" y2="42"/>
+      </svg>
+      <span class="ic-name">Juridiction</span>
+    </div>
+
+    <!-- Honoraires -->
+    <div class="icon-cell">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round">
+        <circle cx="24" cy="24" r="16"/>
+        <path d="M28 18 C26 16 22 16 20 18 C18 20 18 22 20 24 L28 26 C30 26 30 30 28 32 C26 34 22 34 20 32"/>
+        <line x1="24" y1="14" x2="24" y2="16"/>
+        <line x1="24" y1="32" x2="24" y2="34"/>
+      </svg>
+      <span class="ic-name">Honoraires</span>
+    </div>
+  </div>
+
+  <p class="fine-print" style="text-align: center; margin: 20px 0 60px;">Seize pictogrammes — Bibliothèque évolutive · Édition I</p>
+
+  <h3 class="serif" style="font-size: 28px; font-style: italic; margin-bottom: 20px;">Règles d'usage</h3>
+
+  <div class="icon-rules">
+    <div class="icon-rule">
+      <span class="num">RULE / 01</span>
+      <h5>Trait monoligne</h5>
+      <p>Épaisseur constante de 1,25&nbsp;px sur viewBox 48×48. Aucun remplissage. Capuchon et jointure arrondis.</p>
+    </div>
+    <div class="icon-rule">
+      <span class="num">RULE / 02</span>
+      <h5>Couleur</h5>
+      <p>Encre par défaut. Or bruni en accent (badge actif). Jamais de bichromie sauf usage décoratif.</p>
+    </div>
+    <div class="icon-rule">
+      <span class="num">RULE / 03</span>
+      <h5>Taille minimale</h5>
+      <p>16&nbsp;px en numérique, 8&nbsp;mm en impression. En deçà, simplifier la silhouette.</p>
+    </div>
+    <div class="icon-rule">
+      <span class="num">RULE / 04</span>
+      <h5>Garde silencieuse</h5>
+      <p>Une marge intérieure de 10&nbsp;% du viewBox sépare l'icône de son cadre. Aucun élément ne doit toucher le bord.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"><span class="ornament">&mdash; ❦ &mdash;</span></div>
+
+  <h3 class="serif" style="font-size: 28px; font-style: italic; margin-bottom: 14px;">Ornements éditoriaux</h3>
+
+  <div class="comp-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+    <div class="comp-cell" style="text-align: center; align-items: center;">
+      <div class="comp-label">Filet de section</div>
+      <svg width="200" height="20" viewBox="0 0 200 20">
+        <line x1="0" y1="10" x2="80" y2="10" stroke="#0F1E33" stroke-width="0.5"/>
+        <text x="100" y="14" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" font-style="italic" fill="#B08D5A">❦</text>
+        <line x1="120" y1="10" x2="200" y2="10" stroke="#0F1E33" stroke-width="0.5"/>
+      </svg>
+    </div>
+    <div class="comp-cell" style="text-align: center; align-items: center;">
+      <div class="comp-label">Étoile cardinale</div>
+      <svg width="200" height="40" viewBox="0 0 200 40">
+        <text x="100" y="28" text-anchor="middle" font-family="Cormorant Garamond" font-size="22" font-style="italic" fill="#B08D5A">✦ ✦ ✦</text>
+      </svg>
+    </div>
+    <div class="comp-cell" style="text-align: center; align-items: center;">
+      <div class="comp-label">Cul-de-lampe</div>
+      <svg width="200" height="40" viewBox="0 0 200 40">
+        <line x1="40" y1="20" x2="80" y2="20" stroke="#B08D5A" stroke-width="0.5"/>
+        <text x="100" y="26" text-anchor="middle" font-family="Cormorant Garamond" font-size="20" font-style="italic" fill="#0F1E33">&amp;</text>
+        <line x1="120" y1="20" x2="160" y2="20" stroke="#B08D5A" stroke-width="0.5"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ====== COLOPHON ====== -->
+<footer class="colophon">
+  <div class="colo-left">
+    <div class="colo-monogram"><em>BP</em></div>
+    <h3>Colophon</h3>
+    <p>Le présent document fixe l'identité visuelle du Cabinet d'expertise du Dr Benjamin Paule. Toute évolution requiert avis du chef de cabinet et constitue une nouvelle édition.</p>
+  </div>
+
+  <div class="colo-right">
+    <div class="colo-block">
+      <div class="colo-label">Édition</div>
+      <div class="colo-content">Édition I — Avril 2026<br>Format A4 — 56 pages</div>
+    </div>
+    <div class="colo-block">
+      <div class="colo-label">Typographie</div>
+      <div class="colo-content">Cormorant Garamond &amp; Spectral &amp; Marcellus &amp; JetBrains Mono</div>
+    </div>
+    <div class="colo-block">
+      <div class="colo-label">Conception</div>
+      <div class="colo-content">Charte établie pour usage exclusif du cabinet</div>
+    </div>
+    <div class="colo-block">
+      <div class="colo-label">Diffusion</div>
+      <div class="colo-content">Document confidentiel · Reproduction soumise à autorisation</div>
+    </div>
+  </div>
+
+  <div class="colo-foot">
+    <span>BP — MMXXVI</span>
+    <span>Charte graphique · Édition I</span>
+    <span>FOLIO &nbsp;·&nbsp; LVI</span>
+  </div>
+</footer>
+
+<!-- ====== TOAST ====== -->
+<div class="toast" id="toast">Code copié</div>
+
+<script>
+// === Smooth scroll active state ===
+const links = document.querySelectorAll('.sidenav a');
+const sections = document.querySelectorAll('section.page[id], footer[id]');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      links.forEach(l => l.classList.remove('active'));
+      const target = document.querySelector(`.sidenav a[href="#${entry.target.id}"]`);
+      if (target) target.classList.add('active');
+    }
+  });
+}, { rootMargin: '-40% 0px -50% 0px' });
+
+sections.forEach(s => { if (s.id) observer.observe(s); });
+
+// === Click-to-copy on HEX values ===
+const toast = document.getElementById('toast');
+let toastTimer;
+
+document.querySelectorAll('.color-codes .val').forEach(el => {
+  el.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(el.textContent.trim());
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 1800);
+    } catch (e) {}
+  });
+});
+
+// === Reveal on scroll ===
+const reveals = document.querySelectorAll('.lede, .preambule-block, .pull-quote, .logo-stage, .color-grid, .type-specimen, .icon-grid, .tpl-mock');
+reveals.forEach(el => el.classList.add('reveal'));
+
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      revealObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+reveals.forEach(el => revealObs.observe(el));
+</script>
+
+</body>
+</html>
