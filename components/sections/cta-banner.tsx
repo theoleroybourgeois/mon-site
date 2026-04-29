@@ -22,17 +22,17 @@ export function CTABanner({
   className?: string;
 }) {
   return (
-    <section className={cn("relative bg-encre py-24 md:py-28", className)}>
+    <section className={cn("relative bg-encre py-16 md:py-20", className)}>
       <Container>
-        <div className="grid items-end gap-14 md:grid-cols-12 md:gap-12">
+        <div className="grid items-end gap-10 md:grid-cols-12 md:gap-12">
           <div className="md:col-span-7">
             {eyebrow && <EyebrowLabel color="or">{eyebrow}</EyebrowLabel>}
-            <h2 className="mt-5 font-display text-[clamp(36px,5vw,60px)] italic leading-[1.05] text-parchemin">
+            <h2 className="mt-4 font-display text-[clamp(36px,5vw,60px)] italic leading-[1.05] text-parchemin">
               {title}
             </h2>
-            <Hairline className="mt-7" />
+            <Hairline className="mt-6" />
             {body && (
-              <p className="mt-7 max-w-xl text-base leading-[1.65] text-parchemin/80">
+              <p className="mt-6 max-w-xl text-base leading-[1.65] text-parchemin/95">
                 {body}
               </p>
             )}

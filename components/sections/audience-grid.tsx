@@ -26,19 +26,19 @@ export function AudienceGrid({
   className?: string;
 }) {
   return (
-    <section className={cn("py-24 md:py-28", className)}>
+    <section className={cn("py-16 md:py-20", className)}>
       <Container>
         {(eyebrow || title || lede) && (
-          <header className="mb-14 max-w-2xl">
+          <header className="mb-10 max-w-2xl">
             {eyebrow && <EyebrowLabel color="or">{eyebrow}</EyebrowLabel>}
             {title && (
-              <h2 className="mt-5 font-display text-[clamp(32px,4.5vw,52px)] italic leading-[1.1] text-encre">
+              <h2 className="mt-4 font-display text-[clamp(32px,4.5vw,52px)] italic leading-[1.1] text-encre">
                 {title}
               </h2>
             )}
             <Hairline className="mt-6" />
             {lede && (
-              <p className="mt-6 text-base leading-[1.65] text-ardoise">
+              <p className="mt-5 text-base leading-[1.65] text-ardoise">
                 {lede}
               </p>
             )}
@@ -49,14 +49,14 @@ export function AudienceGrid({
             <li key={item.tag} className="bg-parchemin">
               <Card className="flex h-full flex-col border-0 bg-transparent">
                 <EyebrowLabel color="or">{item.tag}</EyebrowLabel>
-                <h3 className="mt-4 font-display text-2xl italic text-encre">
+                <h3 className="mt-3 font-display text-2xl italic text-encre">
                   {item.title}
                 </h3>
-                <p className="mt-3 flex-1 text-sm leading-[1.65] text-ardoise">
+                <p className="mt-3 flex-1 text-base leading-[1.6] text-ardoise">
                   {item.body}
                 </p>
                 {item.cta && (
-                  <div className="mt-6">
+                  <div className="mt-5">
                     <Button variant="text" href={item.cta.href}>
                       {item.cta.label}
                     </Button>

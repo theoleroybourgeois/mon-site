@@ -4,11 +4,11 @@ import { cn } from "@/lib/cn";
 type Variant = "primary" | "secondary" | "gold" | "text";
 
 const base =
-  "inline-flex items-center justify-center gap-3 font-inscr text-[11px] uppercase tracking-[0.3em] transition-all duration-[400ms] ease-[cubic-bezier(0.2,0.8,0.2,1)]";
+  "inline-flex items-center justify-center gap-3 font-inscr text-[12px] uppercase tracking-[0.24em] transition-all duration-[400ms] ease-[cubic-bezier(0.2,0.8,0.2,1)]";
 
 const variantClass: Record<Variant, string> = {
   primary:
-    "bg-encre px-[30px] py-3.5 text-parchemin hover:bg-sceau hover:tracking-[0.36em]",
+    "bg-encre px-[30px] py-3.5 text-parchemin hover:bg-sceau hover:tracking-[0.3em]",
   secondary:
     "border border-encre px-[30px] py-3.5 text-encre hover:bg-encre hover:text-parchemin",
   gold: "bg-or px-[30px] py-3.5 text-albatre hover:bg-or-fonce",

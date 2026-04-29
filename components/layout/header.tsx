@@ -28,11 +28,11 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40">
       <div className="bg-encre">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-2">
-          <p className="font-inscr text-[10px] uppercase tracking-[0.32em] text-parchemin">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-2.5">
+          <p className="font-inscr text-[12px] uppercase tracking-[0.24em] text-parchemin">
             {site.bandeauAutorite.gauche}
           </p>
-          <p className="font-inscr text-[10px] uppercase tracking-[0.32em] text-or">
+          <p className="font-inscr text-[12px] uppercase tracking-[0.24em] text-or">
             {site.bandeauAutorite.droite}
           </p>
         </div>
@@ -58,7 +58,7 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`group relative font-inscr text-[11px] uppercase tracking-[0.28em] transition-colors ${
+                  className={`group relative font-inscr text-[12px] uppercase tracking-[0.24em] transition-colors ${
                     active ? "text-encre" : "text-encre/70 hover:text-encre"
                   }`}
                 >
@@ -73,7 +73,7 @@ export function Header() {
             })}
             <Link
               href="/contact"
-              className="ml-2 inline-flex items-center bg-encre px-6 py-3 font-inscr text-[10.5px] uppercase tracking-[0.3em] text-parchemin transition-all duration-300 ease-out hover:bg-sceau hover:tracking-[0.36em]"
+              className="ml-2 inline-flex items-center bg-encre px-6 py-3 font-inscr text-[12px] uppercase tracking-[0.24em] text-parchemin transition-all duration-300 ease-out hover:bg-sceau hover:tracking-[0.3em]"
             >
               Prendre contact
             </Link>
@@ -120,7 +120,7 @@ export function Header() {
               type="button"
               aria-label="Fermer le menu"
               onClick={() => setOpen(false)}
-              className="font-inscr text-[10.5px] uppercase tracking-[0.3em] text-encre"
+              className="font-inscr text-[12px] uppercase tracking-[0.24em] text-encre"
             >
               Fermer
             </button>
@@ -137,7 +137,7 @@ export function Header() {
                     active ? "text-encre" : "text-encre/80"
                   }`}
                 >
-                  <span className="mr-3 align-middle font-mono text-[10px] not-italic tracking-[0.18em] text-or">
+                  <span className="mr-3 align-middle font-mono text-[12px] not-italic tracking-[0.18em] text-or-fonce">
                     {String(navLinks.indexOf(link) + 1).padStart(2, "0")}
                   </span>
                   {link.label}
@@ -147,13 +147,13 @@ export function Header() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="mt-6 inline-flex w-fit items-center bg-encre px-7 py-4 font-inscr text-[11px] uppercase tracking-[0.3em] text-parchemin"
+              className="mt-6 inline-flex w-fit items-center bg-encre px-7 py-4 font-inscr text-[12px] uppercase tracking-[0.24em] text-parchemin"
             >
               Prendre contact
             </Link>
           </nav>
           <div className="border-t border-hairline-or px-6 py-4">
-            <p className="font-inscr text-[9.5px] uppercase tracking-[0.32em] text-brume">
+            <p className="font-inscr text-[12px] uppercase tracking-[0.24em] text-ardoise">
               {site.bandeauAutorite.gauche}
             </p>
           </div>
