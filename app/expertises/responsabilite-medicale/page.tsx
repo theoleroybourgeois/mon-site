@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Domaines d'expertise",
+  title: "Responsabilité médicale",
 };
 
 export default function Page() {

@@ -1,10 +1,58 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+  /* Couleurs — charte cabinet Dr Benjamin Paule */
+  --color-encre: #0F1E33;
+  --color-encre-soft: #1B2942;
+  --color-parchemin: #F4ECDD;
+  --color-parchemin-deep: #EBE0CB;
+  --color-albatre: #FBF7EE;
+  --color-albatre-pure: #FDFAF3;
+  --color-or: #B08D5A;
+  --color-or-clair: #D4BC95;
+  --color-or-fonce: #8E6F40;
+  --color-sceau: #6B1F2A;
+  --color-sceau-clair: #8E2F3A;
+  --color-ardoise: #2E2E33;
+  --color-brume: #A89F8E;
+  --color-brume-pale: #D8D0BE;
+  --color-hairline: rgba(15, 30, 51, 0.18);
+  --color-hairline-or: rgba(176, 141, 90, 0.45);
+
+  /* Typographies */
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-body: var(--font-spectral), Georgia, serif;
+  --font-inscr: var(--font-marcellus), Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-parchemin);
+  color: var(--color-encre);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Grain papier — calque léger sur tout le site, conformément à la charte */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 0.06 0 0 0 0 0.12 0 0 0 0 0.20 0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.18'/></svg>");
+  mix-blend-mode: multiply;
+  opacity: 0.45;
+}
+
+::selection {
+  background: var(--color-or);
+  color: var(--color-albatre-pure);
 }
