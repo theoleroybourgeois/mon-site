@@ -18,7 +18,7 @@ export function PageHeader({
 }) {
   const isCenter = align === "center";
   return (
-    <header className={cn("pt-20 pb-16 md:pt-28 md:pb-20", className)}>
+    <header className={cn("pt-14 pb-10 md:pt-20 md:pb-14", className)}>
       <Container>
         <div
           className={cn(
@@ -29,14 +29,14 @@ export function PageHeader({
           {eyebrow && <EyebrowLabel color="or">{eyebrow}</EyebrowLabel>}
           <h1
             className={cn(
-              "mt-5 font-display text-[clamp(40px,6vw,72px)] italic leading-[1.05] text-encre",
+              "mt-4 font-display text-[clamp(40px,6vw,72px)] italic leading-[1.05] text-encre",
             )}
           >
             {title}
           </h1>
-          <Hairline className={cn("mt-7", isCenter && "mx-auto")} />
+          <Hairline className={cn("mt-6", isCenter && "mx-auto")} />
           {lede && (
-            <p className="mt-7 max-w-2xl text-lg leading-[1.6] text-ardoise">
+            <p className="mt-6 max-w-2xl text-lg leading-[1.6] text-ardoise">
               {lede}
             </p>
           )}

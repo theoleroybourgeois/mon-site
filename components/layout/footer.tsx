@@ -20,7 +20,7 @@ export function Footer() {
 
   return (
     <footer className="bg-encre text-parchemin">
-      <div className="mx-auto max-w-7xl px-6 pt-20 pb-10">
+      <div className="mx-auto max-w-7xl px-6 pt-14 pb-8">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-4">
             <Link
@@ -39,19 +39,19 @@ export function Footer() {
             <p className="mt-8 font-display text-2xl italic text-parchemin">
               {site.identite.nom}
             </p>
-            <p className="mt-2 font-inscr text-[10px] uppercase tracking-[0.32em] text-or">
+            <p className="mt-2 font-inscr text-[12px] uppercase tracking-[0.24em] text-or">
               {site.identite.agrement.long}
             </p>
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-brume-pale">
+            <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-brume-pale">
               {site.description}
             </p>
           </div>
 
           <div className="md:col-span-3">
-            <p className="font-inscr text-[10px] uppercase tracking-[0.32em] text-or">
+            <p className="font-inscr text-[12px] uppercase tracking-[0.24em] text-or">
               Cabinet
             </p>
-            <address className="mt-5 space-y-4 text-sm not-italic text-brume-pale">
+            <address className="mt-5 space-y-4 text-[15px] not-italic text-brume-pale">
               <p className="leading-relaxed">
                 <span className="block text-parchemin">{cabinetNom}</span>
                 {adresse.rue}
@@ -82,10 +82,10 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-3">
-            <p className="font-inscr text-[10px] uppercase tracking-[0.32em] text-or">
+            <p className="font-inscr text-[12px] uppercase tracking-[0.24em] text-or">
               Expertises
             </p>
-            <ul className="mt-5 space-y-3 text-sm">
+            <ul className="mt-5 space-y-3 text-[15px]">
               {expertises.map((e) => (
                 <li key={e.href}>
                   <Link
@@ -100,10 +100,10 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-2">
-            <p className="font-inscr text-[10px] uppercase tracking-[0.32em] text-or">
+            <p className="font-inscr text-[12px] uppercase tracking-[0.24em] text-or">
               Site
             </p>
-            <ul className="mt-5 space-y-3 text-sm">
+            <ul className="mt-5 space-y-3 text-[15px]">
               {liensSite.map((s) => (
                 <li key={s.href}>
                   <Link
@@ -118,8 +118,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-hairline-or pt-8">
-          <p className="text-center font-inscr text-[10px] uppercase tracking-[0.32em] text-brume">
+        <div className="mt-12 border-t border-hairline-or pt-7">
+          <p className="text-center font-inscr text-[12px] uppercase tracking-[0.24em] text-brume-pale">
             {site.ressort.join(" · ")}
           </p>
         </div>
@@ -127,18 +127,18 @@ export function Footer() {
 
       <div className="border-t border-parchemin/15">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-6 py-5 sm:flex-row sm:items-center">
-          <p className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-brume">
+          <p className="font-mono text-[12px] uppercase tracking-[0.1em] text-brume-pale">
             © {new Date().getFullYear()} {site.identite.nomLong}
-            <span className="mx-3 text-brume/50">·</span>
+            <span className="mx-3 text-brume/60">·</span>
             <Link href="/mentions-legales" className="transition-colors hover:text-parchemin">
               Mentions légales
             </Link>
-            <span className="mx-3 text-brume/50">·</span>
+            <span className="mx-3 text-brume/60">·</span>
             <Link href="/confidentialite" className="transition-colors hover:text-parchemin">
               Confidentialité
             </Link>
           </p>
-          <p className="font-inscr text-[10px] uppercase tracking-[0.32em] text-or">
+          <p className="font-inscr text-[12px] uppercase tracking-[0.24em] text-or">
             {site.bandeauAutorite.droite}
           </p>
         </div>
