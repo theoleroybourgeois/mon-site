@@ -1,18 +1,41 @@
 import type { Metadata } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import {
+  Cormorant_Garamond,
+  Spectral,
+  Marcellus,
+  JetBrains_Mono,
+} from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import "./globals.css";
 
-const inter = Inter({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
   display: "swap",
 });
 
-const fraunces = Fraunces({
+const spectral = Spectral({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-spectral",
+  display: "swap",
+});
+
+const marcellus = Marcellus({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-marcellus",
+  display: "swap",
+});
+
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-jetbrains",
   display: "swap",
 });
 
@@ -32,8 +55,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" className={`${inter.variable} ${fraunces.variable}`}>
-      <body className="flex min-h-screen flex-col bg-white font-sans text-zinc-900 antialiased">
+    <html
+      lang="fr"
+      className={`${cormorant.variable} ${spectral.variable} ${marcellus.variable} ${jetbrains.variable}`}
+    >
+      <body className="flex min-h-screen flex-col">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
