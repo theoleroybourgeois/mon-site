@@ -33,7 +33,7 @@ export function Footer() {
                 alt={site.identite.nom}
                 width={1024}
                 height={758}
-                className="h-20 w-auto"
+                className="h-48 w-auto"
               />
             </Link>
             <p className="mt-8 font-display text-2xl italic text-parchemin">

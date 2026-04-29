@@ -39,7 +39,7 @@ export function Header() {
       </div>
 
       <div className="border-b border-hairline-or bg-parchemin/95 backdrop-blur-sm">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-8 px-6 py-3">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-8 px-6 py-1">
           <Link href="/" className="flex items-center" aria-label={`Accueil — ${site.identite.nom}`}>
             <Image
               src="/images/logos/logo-color.png"
@@ -47,7 +47,7 @@ export function Header() {
               width={1023}
               height={729}
               priority
-              className="h-12 w-auto md:h-14"
+              className="h-28 w-auto md:h-36"
             />
           </Link>
 
@@ -113,7 +113,7 @@ export function Header() {
                 alt=""
                 width={1023}
                 height={729}
-                className="h-10 w-auto"
+                className="h-24 w-auto"
               />
             </Link>
             <button
