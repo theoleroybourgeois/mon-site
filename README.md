@@ -19,6 +19,22 @@ npm run dev
 
 Le site est servi par défaut sur [http://localhost:3000](http://localhost:3000).
 
+## Scripts
+
+| Commande            | Description                                  |
+| ------------------- | -------------------------------------------- |
+| `npm run dev`       | Serveur de développement (hot reload)        |
+| `npm run build`     | Build de production                          |
+| `npm run start`     | Serveur de production (après `build`)        |
+| `npm run lint`      | Lint Next.js                                 |
+| `npm run type-check`| Vérification TypeScript sans émission        |
+
+## Workflow Git
+
+- GitHub Flow simple, pas de branche `dev` longue durée.
+- Chaque travail part d'une branche dédiée (`feat/*`, `fix/*`, `chore/*`).
+- Une PR par fonctionnalité, squash-merge dans `main`, branche supprimée après merge.
+
 ## Structure
 
 ```

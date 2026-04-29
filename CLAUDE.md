@@ -24,6 +24,15 @@ L'objectif est de valoriser son activité d'**expertise médicale**, pas une act
 - **Édition** : contenu en dur dans le repo (pas de CMS). Toute modification passe par le développeur.
 - **Contenu éditorial** : centralisé dans `content/` (TS ou MDX).
 
+## Workflow Git
+
+- **GitHub Flow simple** — pas de branche `dev` longue durée.
+- Chaque travail part d'une branche dédiée (`feat/*`, `fix/*`, `chore/*`). Pas de commit direct sur `main`.
+- Une PR par fonctionnalité, avec un test plan dans la description.
+- **Squash-merge** dans `main` (historique propre).
+- Branche feature supprimée des deux côtés après merge (`git push origin --delete <branche>` puis `git branch -D <branche>` localement, le `-D` étant nécessaire car le squash réécrit le hash).
+- Vercel (à brancher) déploiera chaque PR sur une URL de preview qui servira d'environnement de dev.
+
 ## Arborescence
 
 ```
