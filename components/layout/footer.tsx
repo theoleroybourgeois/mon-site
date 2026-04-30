@@ -9,7 +9,7 @@ const expertises = [
 ];
 
 const liensSite = [
-  { href: "/le-docteur-paule", label: "Présentation" },
+  { href: "/presentation", label: "Présentation" },
   { href: "/honoraires", label: "Honoraires" },
   { href: "/contact", label: "Contact" },
 ];

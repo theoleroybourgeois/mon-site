@@ -139,7 +139,7 @@ function PresentationTeaser() {
               Médecin urgentiste exerçant à Arras, le Docteur Benjamin Paule est inscrit comme expert près la cour d&apos;appel de Douai depuis 2025 (rubrique Médecine). Membre de la Compagnie des experts près la cour d&apos;appel de Douai, il intervient pour les juridictions du ressort et en conseil des victimes.
             </p>
             <div className="mt-8">
-              <Button variant="text" href="/le-docteur-paule">
+              <Button variant="text" href="/presentation">
                 Lire la présentation complète
               </Button>
             </div>

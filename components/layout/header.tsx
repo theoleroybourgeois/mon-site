@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { site } from "@/content/site";
 
 const navLinks = [
-  { href: "/le-docteur-paule", label: "Présentation" },
+  { href: "/presentation", label: "Présentation" },
   { href: "/expertises", label: "Expertises" },
   { href: "/honoraires", label: "Honoraires" },
 ];
