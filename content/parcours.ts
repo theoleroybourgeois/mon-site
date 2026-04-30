@@ -27,19 +27,33 @@ export const diplomes: readonly Diplome[] = [
   },
   {
     intitule: "D.U. d'expertises médicales",
-    // {{Faculté et année à compléter}}
+    etablissement: "Université de Picardie Jules-Verne",
+    annee: 2021,
   },
   {
-    intitule: "D.U. de traumatisé sévère",
-    // {{Faculté et année à compléter}}
+    intitule: "D.I.U. d'expertises en accidents médicaux",
+    etablissement: "Faculté de droit de Bordeaux et Université de Picardie Jules-Verne",
+    annee: 2026,
+  },
+  {
+    intitule: "D.U. de prise en charge du traumatisé sévère",
+    etablissement: "Université de Lille",
+    annee: 2022,
   },
   {
     intitule: "D.I.U. de ventilation artificielle",
-    // {{Faculté et année à compléter}}
+    etablissement: "Université Paris-Est Créteil",
+    annee: 2023,
   },
   {
     intitule: "D.I.U. de réanimation métabolique",
-    // {{Faculté et année à compléter}}
+    etablissement: "Université Côte d'Azur (Nice)",
+    annee: 2023,
+  },
+  {
+    intitule: "D.U. d'insuffisance circulatoire aiguë",
+    etablissement: "Université Paris-Saclay (Kremlin-Bicêtre)",
+    annee: 2024,
   },
 ] as const;
 
@@ -74,7 +88,7 @@ export const carriere: readonly Etape[] = [
 ] as const;
 
 export const societesSavantes: readonly string[] = [
-  // {{Sociétés savantes à compléter (SFMU, ANAMEVA, AREDOC…) — optionnel}}
+  "Compagnie des experts près la cour d'appel de Douai (CECAD)",
 ];
 
 export const publications: readonly string[] = [

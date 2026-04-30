@@ -11,13 +11,14 @@ export const site = {
   },
 
   identifiants: {
-    rpps: "{{RPPS à demander}}",
+    rpps: "10101638343",
     ordre: {
       numero: "{{N° d'inscription à l'Ordre à demander}}",
-      conseil: "{{Conseil départemental à préciser — 62 ou 59}}",
+      conseil: "62",
     },
     expert: {
-      anneeInscription: "{{Année d'inscription cour d'appel de Douai à compléter}}",
+      anneeInscription: "2025",
+      rubrique: "Médecine",
       numero: "{{N° d'expert à compléter (si applicable)}}",
     },
     siret: "{{SIRET à compléter}}",
@@ -25,7 +26,7 @@ export const site = {
   },
 
   cabinet: {
-    nom: "Cabinet Médical",
+    nom: "Pôle Santé",
     adresse: {
       rue: "46 B avenue Fernand Lobbedez",
       codePostal: "62000",
@@ -43,11 +44,14 @@ export const site = {
 
   accueil: {
     plageHoraire: "{{Plage horaire de prise de contact à compléter}}",
-    delaiReponse: "{{Délai indicatif de réponse email à compléter}}",
+    // Choix Dr Paule : pas d'engagement chiffré sur le délai.
+    // Reformuler en accroche sobre côté UI (ex. « réponse personnalisée à chaque demande »),
+    // sans superlatif type « réponse rapide / sous X heures ».
+    delaiReponse: null,
   },
 
   liens: {
-    linkedin: "{{LinkedIn à compléter (optionnel)}}",
+    linkedin: "https://www.linkedin.com/in/benjamin-paule-b59a74406",
     iban: "{{IBAN à compléter (utile pour consignations judiciaires)}}",
   },
 

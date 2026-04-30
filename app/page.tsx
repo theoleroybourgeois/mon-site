@@ -31,15 +31,15 @@ export default function HomePage() {
   return (
     <>
       <Hero
-        eyebrow="Expert près la cour d'appel de Douai"
+        eyebrow="Arras · Hauts-de-France"
         title={
           <>
             Médecin expert
             <br />
-            au service de la justice
+            près la cour d&apos;appel de Douai.
           </>
         }
-        lede="Protection des personnes, dommage corporel, responsabilité médicale. Missions judiciaires et conseil de victimes dans les Hauts-de-France."
+        lede="Mission judiciaire et conseil de victimes — protection des personnes, dommage corporel, responsabilité médicale, dans le ressort de la cour d'appel."
         primaryCta={{ label: "Prendre contact", href: "/contact" }}
         ressort={ressortHero}
         media={<HeroPortrait />}
@@ -49,20 +49,20 @@ export default function HomePage() {
         eyebrow="Domaines d'expertise"
         title={
           <>
-            Une exigence,
+            Trois domaines,
             <br />
-            trois domaines.
+            une même méthode.
           </>
         }
-        lede="Une expertise médicale rigoureuse, indépendante et soumise au contradictoire — quel que soit le cadre d'intervention."
+        lede="Examen personnel, lecture intégrale du dossier, recherche bibliographique, rapport motivé — quel que soit le cadre d'intervention."
         items={expertises}
         className="border-t border-hairline"
       />
 
       <AudienceGrid
         eyebrow="À l'attention des"
-        title="Magistrats, avocats, victimes et assureurs."
-        lede="Quatre interlocuteurs, une même méthode : examen clinique conduit personnellement, analyse documentaire complète, rapport motivé."
+        title="Avocats, victimes, assureurs et magistrats."
+        lede="Une même méthode pour quatre interlocuteurs : examen clinique conduit personnellement, analyse documentaire complète, rapport motivé."
         items={audiences}
         className="border-t border-hairline bg-albatre/40"
       />
@@ -73,7 +73,7 @@ export default function HomePage() {
         <Container>
           <div className="mx-auto max-w-[760px]">
             <PullQuote attribution={site.identite.nomLong} className="my-0">
-              «&nbsp;{"{{Citation à valider — phrase courte de positionnement : rigueur, indépendance, contradictoire. À rédiger avec le Dr Paule.}}"}&nbsp;»
+              «&nbsp;L&apos;examen est conduit personnellement. Le rapport est motivé. Le contradictoire est respecté.&nbsp;»
             </PullQuote>
           </div>
         </Container>
@@ -136,7 +136,7 @@ function PresentationTeaser() {
           </header>
           <div className="lg:col-span-8">
             <p className="font-display text-2xl italic leading-[1.4] text-encre-soft">
-              {"{{Bio courte à valider — 3 à 4 lignes : médecin urgentiste à Arras, agréé près la cour d'appel de Douai depuis {{année}}, intervient en mission judiciaire et en conseil de victimes. À rédiger avec le Dr Paule.}}"}
+              Médecin urgentiste exerçant à Arras, le Docteur Benjamin Paule est inscrit comme expert près la cour d&apos;appel de Douai depuis 2025 (rubrique Médecine). Membre de la Compagnie des experts près la cour d&apos;appel de Douai, il intervient pour les juridictions du ressort et en conseil des victimes.
             </p>
             <div className="mt-8">
               <Button variant="text" href="/le-docteur-paule">

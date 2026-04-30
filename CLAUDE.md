@@ -2,6 +2,14 @@
 
 Contexte projet pour Claude Code. À garder synchronisé avec les décisions du user.
 
+## ⚠️ Lecture obligatoire avant toute rédaction de contenu
+
+**Avant de valider, écrire ou modifier tout texte visible du site** (titres, taglines, libellés de nav, accroches, biographies, contenus pédagogiques, mentions, balises SEO), Claude **doit** lire intégralement [`docs/deontologie-communication.md`](docs/deontologie-communication.md) et appliquer la checklist finale.
+
+Le Dr Paule est inscrit comme **expert près la cour d'appel de Douai** : la communication du site est soumise à un régime cumulé (déontologie médicale, loi 71-498 sur les experts, recommandations CNOM 2020+, LCEN), et un manquement engage des sanctions disciplinaires, pénales (art. 433-17 CP) et LCEN. La forme du titre est **littérale** (« expert près la cour d'appel de Douai »), aucune variante n'est tolérée.
+
+Document destiné au Dr Paule (à transmettre, à ne pas modifier sans validation) : `docs/note-deontologique-paule.pdf`.
+
 ## Projet
 
 Site vitrine du **Docteur Benjamin Paule** — médecin urgentiste, **expert près la cour d'appel de Douai**, exerçant à Arras (Pas-de-Calais).

@@ -12,6 +12,7 @@ export type ExpertiseItem = {
   resume: string;
   href: string;
   ctaLabel?: string;
+  featured?: boolean;
 };
 
 export function ExpertiseGrid({
@@ -46,9 +47,9 @@ export function ExpertiseGrid({
             )}
           </header>
         )}
-        <ul className="grid gap-8 md:grid-cols-3">
+        <ul className="grid gap-8 md:grid-cols-2">
           {items.map((item) => (
-            <li key={item.tag}>
+            <li key={item.tag} className={cn(item.featured && "md:col-span-2")}>
               <Card variant="elegant" className="flex h-full flex-col">
                 <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-or-fonce">
                   {item.numero}
@@ -56,17 +57,37 @@ export function ExpertiseGrid({
                 <EyebrowLabel color="encre" className="mt-2 block">
                   {item.tag}
                 </EyebrowLabel>
-                <h3 className="mt-4 font-display text-3xl italic leading-[1.15] text-encre">
-                  {item.titre}
-                </h3>
-                <p className="mt-4 flex-1 text-base leading-[1.65] text-ardoise">
-                  {item.resume}
-                </p>
-                <div className="mt-6">
-                  <Button variant="text" href={item.href}>
-                    {item.ctaLabel ?? "Lire la fiche"}
-                  </Button>
-                </div>
+                {item.featured ? (
+                  <div className="mt-4 grid gap-6 md:grid-cols-12 md:gap-10">
+                    <h3 className="font-display text-[clamp(28px,3.4vw,40px)] italic leading-[1.1] text-encre md:col-span-5">
+                      {item.titre}
+                    </h3>
+                    <div className="flex flex-col md:col-span-7">
+                      <p className="text-base leading-[1.65] text-ardoise md:text-lg">
+                        {item.resume}
+                      </p>
+                      <div className="mt-6">
+                        <Button variant="text" href={item.href}>
+                          {item.ctaLabel ?? "Lire la fiche"}
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <h3 className="mt-4 font-display text-3xl italic leading-[1.15] text-encre">
+                      {item.titre}
+                    </h3>
+                    <p className="mt-4 flex-1 text-base leading-[1.65] text-ardoise">
+                      {item.resume}
+                    </p>
+                    <div className="mt-6">
+                      <Button variant="text" href={item.href}>
+                        {item.ctaLabel ?? "Lire la fiche"}
+                      </Button>
+                    </div>
+                  </>
+                )}
               </Card>
             </li>
           ))}

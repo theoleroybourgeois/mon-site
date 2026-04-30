@@ -3,11 +3,12 @@ import type { ExpertiseItem } from "@/components/sections/expertise-grid";
 export const expertises: readonly ExpertiseItem[] = [
   {
     numero: "01",
-    tag: "Curatelle · tutelle · sauvegarde",
-    titre: "Protection des personnes",
+    tag: "Faute · imputabilité",
+    titre: "Responsabilité médicale",
     resume:
-      "Évaluation médicale de l'altération des facultés en vue d'une mesure de protection juridique — sauvegarde de justice, curatelle, tutelle.",
-    href: "/expertises/protection-des-personnes",
+      "Expertise sur la conformité d'un acte médical aux règles de l'art et analyse de la chaîne de causalité entre l'acte allégué fautif et le dommage subi. Champ couvert : médecine d'urgence, réanimation, médecine générale, ainsi que les autres spécialités médicales et chirurgicales avec l'appui d'un réseau de praticiens consultants.",
+    href: "/expertises/responsabilite-medicale",
+    featured: true,
   },
   {
     numero: "02",
@@ -19,10 +20,10 @@ export const expertises: readonly ExpertiseItem[] = [
   },
   {
     numero: "03",
-    tag: "Faute · imputabilité",
-    titre: "Responsabilité médicale",
+    tag: "Curatelle · tutelle · sauvegarde",
+    titre: "Protection des personnes",
     resume:
-      "Expertise sur la conformité d'un acte médical aux règles de l'art et analyse de la chaîne de causalité entre l'acte allégué fautif et le dommage subi.",
-    href: "/expertises/responsabilite-medicale",
+      "Évaluation médicale de l'altération des facultés en vue d'une mesure de protection juridique — sauvegarde de justice, curatelle, tutelle.",
+    href: "/expertises/protection-des-personnes",
   },
 ] as const;

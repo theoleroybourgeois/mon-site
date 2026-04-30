@@ -119,9 +119,40 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-hairline-or pt-7">
-          <p className="text-center font-inscr text-[12px] uppercase tracking-[0.24em] text-brume-pale">
-            {site.ressort.join(" · ")}
-          </p>
+          <dl className="grid gap-x-10 gap-y-4 text-[13px] leading-relaxed text-brume-pale sm:grid-cols-2 lg:grid-cols-3">
+            <div>
+              <dt className="font-inscr text-[11px] uppercase tracking-[0.24em] text-or">
+                Identification ordinale
+              </dt>
+              <dd className="mt-2">
+                RPPS {site.identifiants.rpps}
+                <br />
+                Inscrit au CDOM {site.identifiants.ordre.conseil} (Pas-de-Calais)
+                <br />
+                Médecin spécialiste en médecine d&apos;urgence
+              </dd>
+            </div>
+            <div>
+              <dt className="font-inscr text-[11px] uppercase tracking-[0.24em] text-or">
+                Expert judiciaire
+              </dt>
+              <dd className="mt-2">
+                Expert près la cour d&apos;appel de Douai
+                <br />
+                Inscription depuis {site.identifiants.expert.anneeInscription}, rubrique {site.identifiants.expert.rubrique}
+                <br />
+                Membre de la CECAD
+              </dd>
+            </div>
+            <div>
+              <dt className="font-inscr text-[11px] uppercase tracking-[0.24em] text-or">
+                Ressort de la cour d&apos;appel
+              </dt>
+              <dd className="mt-2 font-inscr text-[11px] uppercase tracking-[0.18em]">
+                {site.ressort.join(" · ")}
+              </dd>
+            </div>
+          </dl>
         </div>
       </div>
 
