@@ -56,7 +56,7 @@ L'emplacement UI des cadres d'intervention reste à arbitrer (page d'accueil, pa
 ```
 app/
   page.tsx                              ← accueil
-  le-docteur-paule/                     ← bio, parcours, agréments
+  presentation/                         ← bio, parcours, agréments
   expertises/
     page.tsx                            ← page mère
     protection-des-personnes/
@@ -154,7 +154,6 @@ Route `/styleguide` à créer après Phase 1 et Phase 2 — `noindex` + garde `n
 
 - **Cadres d'intervention** (judiciaire / conseil de victimes) — emplacement UI à arbitrer (home, page Présentation, ou tag transversal sur chaque fiche).
 - **Mailer pour `/contact`** — choix du service à faire (Resend, SMTP, autre).
-- **Renommage éventuel** de la route `/le-docteur-paule` → `/presentation` (URL ne correspond plus au libellé).
 - **Rédaction des contenus** — tous les textes de page sont en `{{À COMPLÉTER}}` aujourd'hui.
 - **SEO** — données structurées `Physician` / `LocalBusiness`, `sitemap.ts`, `robots.ts`, image OG.
 - **Branchement Vercel** + env vars + URLs de preview sur PR.

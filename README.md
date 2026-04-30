@@ -39,7 +39,7 @@ Le site est servi par défaut sur [http://localhost:3000](http://localhost:3000)
 
 ```
 app/                     pages (App Router)
-  le-docteur-paule/      bio, parcours, agréments
+  presentation/          bio, parcours, agréments
   expertises/            page mère + 4 sous-pages (axes d'expertise)
   honoraires/            modalités, tarifs, déroulé d'une expertise
   contact/               formulaire + téléphone + adresse
