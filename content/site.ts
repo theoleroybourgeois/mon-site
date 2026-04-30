@@ -43,7 +43,7 @@ export const site = {
   },
 
   accueil: {
-    plageHoraire: "{{Plage horaire de prise de contact à compléter}}",
+    plageHoraire: "Sur rendez-vous",
     // Choix Dr Paule : pas d'engagement chiffré sur le délai.
     // Reformuler en accroche sobre côté UI (ex. « réponse personnalisée à chaque demande »),
     // sans superlatif type « réponse rapide / sous X heures ».

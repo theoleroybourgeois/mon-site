@@ -47,3 +47,47 @@ export function Textarea({
     />
   );
 }
+
+export function Select({
+  className,
+  children,
+  ...props
+}: React.SelectHTMLAttributes<HTMLSelectElement>) {
+  return (
+    <div className="relative">
+      <select
+        {...props}
+        className={cn(
+          fieldBase,
+          "appearance-none pr-8 bg-transparent",
+          className,
+        )}
+      >
+        {children}
+      </select>
+      <span
+        aria-hidden
+        className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 text-or"
+      >
+        ▾
+      </span>
+    </div>
+  );
+}
+
+export function Checkbox({
+  label,
+  className,
+  ...props
+}: React.InputHTMLAttributes<HTMLInputElement> & { label: React.ReactNode }) {
+  return (
+    <label className={cn("flex items-start gap-3 cursor-pointer", className)}>
+      <input
+        type="checkbox"
+        {...props}
+        className="mt-1 h-4 w-4 flex-shrink-0 appearance-none border border-hairline bg-transparent checked:border-or checked:bg-or focus:outline-none focus:ring-1 focus:ring-or"
+      />
+      <span className="text-sm leading-[1.55] text-ardoise">{label}</span>
+    </label>
+  );
+}
